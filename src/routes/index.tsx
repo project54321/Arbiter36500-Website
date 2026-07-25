@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, type CSSProperties } from "react";
 import "@/atlas-brut/atlas-brut.css";
 
 const FAVICON =
@@ -370,7 +370,7 @@ function AtlasBrut() {
     <h2 className="sec-title">Filed en route.</h2>
   </div>
   <div className="stack">
-    <article className="stack-card" style={{ ["--i" as any]: 0 } as React.CSSProperties}>
+    <article className="stack-card" style={{ ["--i" as any]: 0 } as CSSProperties}>
       <div className="sc-media"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop&sat=-100" alt="" loading="lazy" /></div>
       <div className="sc-body">
         <p className="mono sc-date"><span className="accent">DISPATCH 03</span> — 02.11.2026 · FILED FROM 42.7358°N</p>
@@ -379,7 +379,7 @@ function AtlasBrut() {
         <p className="mono sc-more">READ IN FULL — VOL. I, P. 402 <span className="accent">→</span></p>
       </div>
     </article>
-    <article className="stack-card" style={{ ["--i" as any]: 1 } as React.CSSProperties}>
+    <article className="stack-card" style={{ ["--i" as any]: 1 } as CSSProperties}>
       <div className="sc-media"><img src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=1200&auto=format&fit=crop&sat=-100" alt="" loading="lazy" /></div>
       <div className="sc-body">
         <p className="mono sc-date"><span className="accent">DISPATCH 02</span> — 14.09.2026 · FILED FROM 42.3603°N</p>
@@ -388,7 +388,7 @@ function AtlasBrut() {
         <p className="mono sc-more">READ IN FULL — VOL. I, P. 214 <span className="accent">→</span></p>
       </div>
     </article>
-    <article className="stack-card" style={{ ["--i" as any]: 2 } as React.CSSProperties}>
+    <article className="stack-card" style={{ ["--i" as any]: 2 } as CSSProperties}>
       <div className="sc-media"><img src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=1200&auto=format&fit=crop&sat=-100" alt="" loading="lazy" /></div>
       <div className="sc-body">
         <p className="mono sc-date"><span className="accent">DISPATCH 01</span> — 21.06.2026 · FILED FROM 45.5017°N</p>
