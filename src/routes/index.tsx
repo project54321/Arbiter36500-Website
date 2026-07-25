@@ -31,10 +31,10 @@ export const Route = createFileRoute("/")({
       { src: "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" },
     ],
   }),
-  component: AtlasBrut,
+  component: Arbiter,
 });
 
-function AtlasBrut() {
+function Arbiter() {
   useEffect(() => {
     const w = window as unknown as Record<string, unknown>;
     w.__atlasIntroDone = false;
@@ -44,7 +44,7 @@ function AtlasBrut() {
         if (l) l.style.display = "none";
         document.body.style.overflow = "";
         // eslint-disable-next-line no-console
-        console.warn("[ATLAS] intro did not complete — revealed page via fail-safe.");
+        console.warn("Arbiter intro did not complete — revealed page via fail-safe.");
       }
     }, 6000);
 
@@ -110,18 +110,17 @@ function AtlasBrut() {
 
       {/* ░░ HEADER ░░ */}
       <header id="site-header">
-        <a href="#" className="wordmark"><span className="gold">ATLAS</span><span className="gold">✚</span>BRUT</a>
+        <a href="#" className="wordmark"><span className="gold">ARBITER</span> #36500</a>
         <nav className="mono">
-          <a href="#ch-01">Monuments</a>
-          <a href="#route">Route</a>
+          <a href="#ch-01">Our Mission</a>
+          <a href="#route">Subteams</a>
           <a href="#ledger">Ledger</a>
           <a href="#dispatches">Dispatches</a>
           <a href="#volume">Volume</a>
         </nav>
         <div className="head-tools">
-          <button id="sound-btn" className="mono" aria-pressed="false" aria-label="Toggle ambient sound">SND · OFF</button>
           <p id="field-clock" className="mono">—:— UTC</p>
-          <a href="#volume" className="pill mono">Pre-order</a>
+          <a href="#volume" className="pill mono">Contact Us</a>
           <button id="menu-btn" aria-label="Open index" aria-expanded="false" aria-controls="menu-overlay"><span></span><span></span></button>
         </div>
       </header>
@@ -129,7 +128,7 @@ function AtlasBrut() {
       {/* ░░ MENU OVERLAY — the index. Full-screen on every size; doubles as mobile nav ░░ */}
       <div id="menu-overlay" aria-hidden="true">
         <div className="menu-top">
-          <span className="wordmark"><span className="gold">ATLAS</span><span className="gold">✚</span>BRUT</span>
+          <span className="wordmark"><span className="gold">ARBITER</span><span className="gold"> #</span>36500</span>
           <button id="menu-close" className="mono" aria-label="Close index">CLOSE ✕</button>
         </div>
         <nav className="menu-links">
@@ -141,7 +140,7 @@ function AtlasBrut() {
           <a href="#contact"><span className="mono m-no">06</span><span className="m-name">Expedition</span></a>
         </nav>
         <div className="menu-foot mono dim">
-          <span><span className="gold">ATLAS</span> BRUT — INDEX</span>
+          <span><span className="gold">ARBITER</span> #36500 — INDEX</span>
           <span>52.4820°N / 13.3170°E</span>
         </div>
       </div>
@@ -150,24 +149,24 @@ function AtlasBrut() {
 
         {/* ░░ HERO — rack-focus title: blurred and oversized, snaps into focus ░░ */}
         <section className="hero" data-tint="#0C0D0F">
-          <p className="hero-label mono" data-decode="">FIELD GUIDE — 20TH CENTURY CONCRETE</p>
+          <p className="hero-label mono" data-decode="">FIRST TECH CHALLENGE TEAM - AUSTIN TEXAS</p>
           <h1>
-            <span className="hero-line focus-line"><span className="gold">ATLAS</span></span>
-            <span className="hero-line focus-line">BRUT<span className="gold">✚</span></span>
+            <span className="hero-line focus-line"><span className="gold">ARBITER</span></span>
+            <span className="hero-line focus-line">#36500</span>
           </h1>
           <div className="hero-foot">
-            <p className="hero-desc">Seven monuments. Three continents. One material that refuses to apologise. A photographic expedition through the concrete century — surveyed, plated, and filed.</p>
-            <p className="mono dim" data-decode="">SCROLL TO DESCEND — 66.56°N → 42.73°N</p>
+            <p className="hero-desc">Not built to participate. Designed to innovate, compete, and leave a mark. Welcome to Arbiter, where robotics meets relentless ambition and a global legacy.</p>
+            <p className="mono dim" data-decode="">LEARN ABOUT THE JOURNEY</p>
           </div>
         </section>
 
         {/* ░░ PROLOGUE — short field note, masked line rise ░░ */}
         <section className="prologue" data-tint="#0C0D0F">
-          <p className="mono dim sec-label" data-decode="">PROLOGUE / HOW TO READ THIS ATLAS</p>
+          <p className="mono dim sec-label" data-decode="">INTRODUCTION / OUR MISSION</p>
           <p className="prologue-text">
-            <span className="line-mask"><span className="line">Every monument in this record is approached the same way:</span></span>
-            <span className="line-mask"><span className="line">from a distance, through the viewfinder, until the concrete</span></span>
-            <span className="line-mask"><span className="line">fills the frame and there is nowhere left to look.</span></span>
+            <span className="line-mask"><span className="line">OUR MISSION IS <span className="gold">SIMPLE:</span></span></span>
+            <span className="line-mask"><span className="line">Provide and promote an inclusive community where we tackle new challenges as a collective team.</span></span>
+            <span className="line-mask"><span className="line">Embrace diverse perspectives and learn from one another to build technically strong robots and an even stronger community.</span></span>
           </p>
         </section>
 
@@ -175,7 +174,7 @@ function AtlasBrut() {
         <section className="chapter" id="ch-01" data-tint="#0D0F13">
           <div className="ch-stage">
             <div className="ch-mask">
-              <img className="ch-img" src="https://images.unsplash.com/photo-1672191189482-012f0157b3d9?w=3840&q=80" alt="Geisel Library — raking concrete piers" loading="lazy" decoding="async" />
+              <img className="ch-img" src="/hw.JPG" alt="Geisel Library — raking concrete piers" loading="lazy" decoding="async" />
               <div className="ch-scrim"></div>
             </div>
             <div className="ch-head mono">
@@ -183,8 +182,8 @@ function AtlasBrut() {
               <span className="ch-coord" data-decode="">32.8810°N / 117.2376°W</span>
             </div>
             <div className="ch-meta">
-              <h2 className="ch-title"><span className="line-mask"><span className="line">Geisel Library</span></span></h2>
-              <p className="ch-facts mono"><span className="line-mask"><span className="line">WILLIAM L. PEREIRA — 1970 — LA JOLLA, US</span></span></p>
+              <h2 className="ch-title"><span className="line-mask"><span className="line">Design Team</span></span></h2>
+              <p className="ch-facts mono"><span className="line-mask"><span className="line">Arbiter #36500 — 2026 — Austin, TX</span></span></p>
               <p className="ch-desc"><span className="line-mask"><span className="line">A lantern of concrete and glass held out over the canyon</span></span><span className="line-mask"><span className="line">on eight raking piers — a spaceship that chose to become a library.</span></span></p>
             </div>
           </div>
@@ -194,7 +193,7 @@ function AtlasBrut() {
         <section className="chapter" id="ch-02" data-tint="#101312">
           <div className="ch-stage">
             <div className="ch-mask">
-              <img className="ch-img" src="https://images.unsplash.com/photo-1701455103645-705f6ab68ed8?w=3840&q=80" alt="Habitat 67 — stacked modular volumes" loading="lazy" decoding="async" />
+              <img className="ch-img" src="sw.JPG" alt="Habitat 67 — stacked modular volumes" loading="lazy" decoding="async" />
               <div className="ch-scrim"></div>
             </div>
             <div className="ch-head mono">
@@ -213,7 +212,7 @@ function AtlasBrut() {
         <section className="chapter" id="ch-03" data-tint="#14100C">
           <div className="ch-stage">
             <div className="ch-mask">
-              <img className="ch-img" src="https://images.unsplash.com/photo-1630007808426-7be055a4e7e1?w=3840&q=80" alt="Buzludzha — abandoned concrete monument" loading="lazy" decoding="async" />
+              <img className="ch-img" src="/mg.JPG" alt="Buzludzha — abandoned concrete monument" loading="lazy" decoding="async" />
               <div className="ch-scrim"></div>
             </div>
             <div className="ch-head mono">

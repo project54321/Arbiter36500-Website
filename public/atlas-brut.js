@@ -322,10 +322,15 @@ document.querySelectorAll('.chapter').forEach((chapter) => {
 
   // rows stagger in on first approach
   if (!reduceMotion) {
+    // Trigger ledger rows earlier and make the entrance snappier so
+    // they appear reliably during fast scrolling.
+    // Trigger ledger rows earlier and make the entrance snappier so
+    // they appear reliably during fast scrolling.
     gsap.from('.l-row', {
-      y: 26, autoAlpha: 0, duration: 0.9, stagger: 0.07, ease: CONFIG.ease,
+      y: 16, autoAlpha: 0, duration: 0.45, stagger: 0.03, ease: CONFIG.ease,
       clearProps: 'opacity,visibility,transform',
-      scrollTrigger: { trigger: '.ledger-rows', start: 'top 82%' }
+      // start when the ledger top reaches 50% down the viewport (much earlier)
+      scrollTrigger: { trigger: '.ledger-rows', start: 'top 50%' }
     });
   }
 }
