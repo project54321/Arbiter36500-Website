@@ -237,16 +237,15 @@ document.querySelectorAll('.chapter').forEach((chapter) => {
   gsap.set(lines, { yPercent: 115 });
   gsap.set(head, { autoAlpha: 0 });
 
-  // COLOR BLOOM — the plate rides in grayscale; once the crop reaches
-  // full-bleed the photograph eases into color (a discrete tween, not
-  // scrubbed — it should feel like the monument coming alive, not a
-  // slider). Leaving the moment desaturates it again.
+  // GOLD BLOOM — the plate rides in gold colorwash; once the crop reaches
+  // full-bleed the photograph blooms into a richer gold tone.
+  // Leaving the moment rests it back to classic gold colorwash.
   let bloomed = false;
   const bloom = (on) => {
     if (on === bloomed) return;
     bloomed = on;
     gsap.to(img, {
-      filter: on ? 'grayscale(0) contrast(1.05)' : 'grayscale(1) contrast(1.05)',
+      filter: on ? 'sepia(0.65) hue-rotate(4deg) saturate(2.2) contrast(1.08) brightness(0.98)' : 'sepia(0.85) hue-rotate(5deg) saturate(1.9) contrast(1.05) brightness(0.96)',
       duration: on ? 0.9 : 0.5, ease: 'power2.inOut', overwrite: 'auto'
     });
   };
@@ -301,24 +300,23 @@ document.querySelectorAll('.chapter').forEach((chapter) => {
         return;
       }
       // load into the back buffer, wipe it down over the front —
-      // arriving in COLOR (the resting plate is grayscale; the pull
-      // from the file is the live one)
+      // arriving in vibrant GOLD colorwash (the resting plate is gold colorwash)
       if (wiping) wiping.kill();
       back.src = current;
-      gsap.set(back, { clipPath: 'inset(0 0 100% 0)', zIndex: 2, filter: 'grayscale(1)' });
+      gsap.set(back, { clipPath: 'inset(0 0 100% 0)', zIndex: 2, filter: 'sepia(0.85) hue-rotate(5deg) saturate(1.9) contrast(1.05) brightness(0.96)' });
       gsap.set(front, { zIndex: 1 });
       wiping = gsap.to(back, {
-        clipPath: 'inset(0 0 0% 0)', filter: 'grayscale(0)', duration: 0.7, ease: CONFIG.ease,
+        clipPath: 'inset(0 0 0% 0)', filter: 'sepia(0.65) hue-rotate(4deg) saturate(2.2) contrast(1.08)', duration: 0.7, ease: CONFIG.ease,
         onComplete: () => { [front, back] = [back, front]; wiping = null; }
       });
       coordEl.dataset.text = row.dataset.coord;
       decode(coordEl, { duration: 0.6 });
     }));
 
-    // when the reader leaves the index, the plate rests back to grayscale
+    // when the reader leaves the index, the plate rests back to gold colorwash
     document.querySelector('.ledger-rows').addEventListener('mouseleave', () => {
       if (reduceMotion) return;
-      gsap.to([imgA, imgB], { filter: 'grayscale(1)', duration: 0.6, ease: 'power2.out' });
+      gsap.to([imgA, imgB], { filter: 'sepia(0.85) hue-rotate(5deg) saturate(1.9) contrast(1.05) brightness(0.96)', duration: 0.6, ease: 'power2.out' });
     });
   }
 
