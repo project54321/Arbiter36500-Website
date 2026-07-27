@@ -84,7 +84,7 @@ function Arbiter() {
         <div className="loader-half loader-left"></div>
         <div className="loader-half loader-right"></div>
         <div className="loader-console mono">
-          <p id="loader-title" data-text="ARBITER #36500">████ ████ — ████ ██████</p>
+          <p id="loader-title" data-text="ARBITER #36500">████████ ██████████</p>
           <p id="loader-coords">FIRST TECH CHALLENGE</p>
         </div>
       </div>
@@ -330,37 +330,38 @@ function Arbiter() {
           </div>
           <div className="ledger-grid">
             <ul className="ledger-rows">
-              <li><button className="l-row" data-img="dt.png" data-coord="32.8810°N / 117.2376°W">
+              <li><button className="l-row" data-img="dt.png" data-coord="HOLONOMIC DRIVETRAIN">
                 <span className="l-no mono">01</span>
                 <span className="l-name">Holonomic Drivetrain</span>
                 <span className="l-meta mono">INTO THE DEEP · 2026</span>
               </button></li>
-              <li><button className="l-row" data-img="pckt.png" data-coord="45.5017°N / 73.5540°W">
+              <li><button className="l-row" data-img="pckt.png" data-coord="POCKETED PLATES">
                 <span className="l-no mono">02</span>
                 <span className="l-name">Pocketed Plates</span>
                 <span className="l-meta mono">INTO THE DEEP · 2026</span>
               </button></li>
-              <li><button className="l-row" data-img="odom.png" data-coord="51.5202°N / 0.0937°W">
+              <li><button className="l-row" data-img="odom.png" data-coord="ODOMETRY & PINPOINT">
+
                 <span className="l-no mono">03</span>
                 <span className="l-name">Odometry & Pinpoint</span>
                 <span className="l-meta mono">INTO THE DEEP · 2026</span>
               </button></li>
-              <li><button className="l-row" data-img="claw.png" data-coord="42.3603°N / 71.0580°W">
+              <li><button className="l-row" data-img="claw.png" data-coord="PIVOTING CLAW">
                 <span className="l-no mono">04</span>
                 <span className="l-name">Pivoting Claw</span>
                 <span className="l-meta mono">INTO THE DEEP · 2026</span>
               </button></li>
-              <li><button className="l-row" data-img="ex.png" data-coord="43.2612°N / 5.3964°E">
+              <li><button className="l-row" data-img="ex.png" data-coord="EXTENDING ARMS">
                 <span className="l-no mono">05</span>
                 <span className="l-name">Extending Arms</span>
                 <span className="l-meta mono">INTO THE DEEP · 2026</span>
               </button></li>
-              <li><button className="l-row" data-img="pv.png" data-coord="42.7358°N / 25.3937°E">
+              <li><button className="l-row" data-img="pv.png" data-coord="PIVOT MECHANISM">
                 <span className="l-no mono">06</span>
                 <span className="l-name">Pivot Mechanism</span>
                 <span className="l-meta mono">INTO THE DEEP · 2026</span>
               </button></li>
-              <li><button className="l-row" data-img="hng.png" data-coord="44.8125°N / 20.4612°E">
+              <li><button className="l-row" data-img="hng.png" data-coord="HANGING MECHANISM">
                 <span className="l-no mono">07</span>
                 <span className="l-name">Hanging Mechanism</span>
                 <span className="l-meta mono">INTO THE DEEP · 2026</span>
@@ -374,7 +375,7 @@ function Arbiter() {
                 <span className="plate-corner tl"></span><span className="plate-corner tr"></span>
                 <span className="plate-corner bl"></span><span className="plate-corner br"></span>
               </div>
-              <p className="plate-read mono"><span id="plate-coord">32.8810°N / 117.2376°W</span></p>
+              <p className="plate-read mono"><span id="plate-coord">HOLONOMIC DRIVETRAIN</span></p>
             </div>
           </div>
         </section>
@@ -403,8 +404,8 @@ function Arbiter() {
         <section id="route" data-tint="#0D1013">
           <div className="route-stage">
             <div className="route-head">
-              <p className="mono dim sec-label" data-decode="">THE ROUTE / SEVEN LEGS — 14,212 KM</p>
-              <h2 className="sec-title">One line through<br />the concrete century.</h2>
+              <p className="mono dim sec-label" data-decode="">ARBITER #36500 / SOFTWARE</p>
+              <h2 className="sec-title">Fifty Hertz,<br />minimal latency.</h2>
             </div>
             <div className="route-map">
               <svg viewBox="0 0 1200 640" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
@@ -420,29 +421,24 @@ function Arbiter() {
                   <line x1="0" y1="240" x2="1200" y2="240"></line><line x1="0" y1="320" x2="1200" y2="320"></line>
                   <line x1="0" y1="400" x2="1200" y2="400"></line><line x1="0" y1="480" x2="1200" y2="480"></line>
                   <line x1="0" y1="560" x2="1200" y2="560"></line>
-                  {/* latitude ticks — the grid earns its keep */}
-                  <text x="8" y="74">70°N</text><text x="8" y="154">60°N</text>
-                  <text x="8" y="234">50°N</text><text x="8" y="314">40°N</text>
-                  <text x="8" y="394">30°N</text><text x="8" y="474">20°N</text>
-                  <text x="8" y="554">10°N</text>
                 </g>
                 {/* the expedition line — straight survey legs, dashoffset scrubbed 1000 → 0 */}
                 <path id="route-path" pathLength="1000" d="M140,520 L400,350 L480,210 L760,150 L860,330 L990,260 L1080,380"></path>
                 {/* waypoints spread across the full grid; every label sits on the
              side of its dot that the line does NOT pass through */}
-                <g className="wp" data-at="0.01" transform="translate(140,520)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="16" y="26">GEISEL LIBRARY</text></g>
-                <g className="wp" data-at="0.25" transform="translate(400,350)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="16" y="26">BOSTON CITY HALL</text></g>
-                <g className="wp" data-at="0.37" transform="translate(480,210)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="30">HABITAT 67</text></g>
-                <g className="wp" data-at="0.60" transform="translate(760,150)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="-16">BARBICAN ESTATE</text></g>
-                <g className="wp" data-at="0.76" transform="translate(860,330)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="30">UNITÉ D'HABITATION</text></g>
-                <g className="wp" data-at="0.88" transform="translate(990,260)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="-16">WESTERN CITY GATE</text></g>
-                <g className="wp" data-at="0.99" transform="translate(1080,380)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="30" textAnchor="end">BUZLUDZHA</text></g>
+                <g className="wp" data-at="0.01" transform="translate(140,520)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="16" y="26">BASIC JAVA</text></g>
+                <g className="wp" data-at="0.25" transform="translate(400,350)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="16" y="26">SENSORS & MOTORS</text></g>
+                <g className="wp" data-at="0.37" transform="translate(480,210)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="30">DRIVETRAIN CODE</text></g>
+                <g className="wp" data-at="0.60" transform="translate(760,150)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="-16">COMPUTER VISION</text></g>
+                <g className="wp" data-at="0.76" transform="translate(860,330)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="30">PIDF CONTROL LOOPS</text></g>
+                <g className="wp" data-at="0.88" transform="translate(990,260)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="-16">ODOMETRY</text></g>
+                <g className="wp" data-at="0.99" transform="translate(1080,380)"><circle className="wp-ring" r="11"></circle><circle className="wp-dot" r="3.5"></circle><text x="14" y="30" textAnchor="end">PEDRO PATHING</text></g>
                 {/* the survey pen — rides the tip of the line as it draws */}
                 <g id="route-pen"><circle className="pen-ring" r="9"></circle><circle className="pen-dot" r="3.5"></circle></g>
               </svg>
               <p className="route-read mono">
-                <span id="route-leg">LEG 00 / 07</span>
-                <span id="route-km" className="accent">0 KM</span>
+                <span id="route-leg">01 / 07</span>
+                <span id="route-km" className="accent">#0</span>
               </p>
             </div>
           </div>

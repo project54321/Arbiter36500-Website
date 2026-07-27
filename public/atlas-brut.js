@@ -68,9 +68,7 @@ document.querySelectorAll('[data-decode]').forEach((el) => {
 });
 
 /* ═══════════════════════════════════════════════════════════════
-   LOADER — coordinates tick on the console while the title
-   decodes, then the two curtain halves split apart and the hero
-   racks into focus (blurred + oversized → sharp, settled).
+   LOADER — static subtitle on the console while title decodes
    ═══════════════════════════════════════════════════════════════ */
 if (!reduceMotion) document.body.style.overflow = 'hidden';
 
@@ -84,30 +82,26 @@ document.fonts.ready.then(() => {
     return;
   }
 
-  // ticking survey coordinates — pure flavour while the title decodes
-  const coordState = { lat: 0, lon: 0 };
-  const coordTick = gsap.to(coordState, {
-    lat: 66.56, lon: 25.39, duration: CONFIG.loaderDuration, ease: 'power2.inOut',
-    onUpdate() {
-      coordsEl.textContent =
-        coordState.lat.toFixed(4) + '° N / ' + coordState.lon.toFixed(4).padStart(8, '0') + '° E';
-    }
-  });
+  // Force the subtitle text to stay static as FIRST TECH CHALLENGE
+  coordsEl.textContent = 'FIRST TECH CHALLENGE';
 
   const intro = gsap.timeline({
     defaults: { ease: CONFIG.ease },
-    onComplete: () => { document.body.style.overflow = ''; window.__atlasIntroDone = true; startHeroIdle(); }
+    onComplete: () => { 
+      document.body.style.overflow = ''; 
+      window.__atlasIntroDone = true; 
+      if (typeof startHeroIdle === 'function') startHeroIdle(); 
+    }
   });
 
   intro
     .add(decode(document.getElementById('loader-title'), { duration: CONFIG.loaderDuration }))
-    .add(coordTick, 0)
     // curtains part
     .to('.loader-left',  { xPercent: -101, duration: 0.9, ease: 'expo.inOut' }, '+=0.2')
     .to('.loader-right', { xPercent: 101,  duration: 0.9, ease: 'expo.inOut' }, '<')
     .to('.loader-console', { autoAlpha: 0, duration: 0.3 }, '<')
     .set(loader, { display: 'none' })
-    // RACK FOCUS — the hero arrives out of focus and snaps sharp
+    // RACK FOCUS — hero camera focus arrival
     .fromTo('.focus-line',
       { scale: 1.18, filter: 'blur(22px)', autoAlpha: 0, transformOrigin: '0% 100%' },
       { scale: 1, filter: 'blur(0px)', autoAlpha: 1, duration: 1.4, stagger: 0.12 }, '-=0.55')
@@ -324,13 +318,11 @@ document.querySelectorAll('.chapter').forEach((chapter) => {
   if (!reduceMotion) {
     // Trigger ledger rows earlier and make the entrance snappier so
     // they appear reliably during fast scrolling.
-    // Trigger ledger rows earlier and make the entrance snappier so
-    // they appear reliably during fast scrolling.
     gsap.from('.l-row', {
-      y: 16, autoAlpha: 0, duration: 0.45, stagger: 0.03, ease: CONFIG.ease,
+      y: 20, autoAlpha: 0, duration: 0.5, stagger: 0.04, ease: CONFIG.ease,
       clearProps: 'opacity,visibility,transform',
-      // start when the ledger top reaches 50% down the viewport (much earlier)
-      scrollTrigger: { trigger: '.ledger-rows', start: 'top 50%' }
+      // start when the ledger top reaches 70% down the viewport (earlier)
+      scrollTrigger: { trigger: '.ledger-rows', start: 'top 70%' }
     });
   }
 }
@@ -536,11 +528,11 @@ window.addEventListener('load', () => ScrollTrigger.refresh());
   const pen = document.getElementById('route-pen');
   const legEl = document.getElementById('route-leg');
   const kmEl = document.getElementById('route-km');
-  const TOTAL_KM = 14212;
+  const TOTAL_KM = 36500;
 
   if (path && reduceMotion) {
-    legEl.textContent = 'LEG 07 / 07 — ARRIVAL · BUZLUDZHA';
-    kmEl.textContent = TOTAL_KM.toLocaleString('en-US') + ' KM';
+    legEl.textContent = '07 / 07 — PEDRO PATHING';
+    kmEl.textContent = '#' + TOTAL_KM;
     wps.forEach((w) => w.classList.add('is-on'));
   } else if (path) {
     // Each waypoint's TRUE fraction along the path — sampled, not
@@ -576,10 +568,10 @@ window.addEventListener('load', () => ScrollTrigger.refresh());
         if (hit) idx = i;
       });
 
-      if (idx < 0) legEl.textContent = 'LEG 00 / 07 — DEPARTING…';
-      else if (idx >= stops.length - 1) legEl.textContent = 'LEG 07 / 07 — ARRIVAL · ' + stops[idx].name;
-      else legEl.textContent = 'LEG ' + String(idx + 1).padStart(2, '0') + ' / 07 — ' + stops[idx].name + ' → ' + stops[idx + 1].name;
-      kmEl.textContent = Math.round(TOTAL_KM * p).toLocaleString('en-US') + ' KM';
+      if (idx < 0) legEl.textContent = '00 / 07 — BEGINNING';
+      else if (idx >= stops.length - 1) legEl.textContent = '07 / 07 — PEDRO PATHING · ' + stops[idx].name;
+      else legEl.textContent = '0' + String(idx + 1) + ' / 07 — ' + stops[idx].name + ' → ' + stops[idx + 1].name;
+      kmEl.textContent = '#' + Math.round(TOTAL_KM * p);
     };
 
     // The drawing completes at 78% of the pin; the last 22% is a HOLD —
