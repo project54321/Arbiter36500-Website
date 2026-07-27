@@ -84,8 +84,8 @@ function Arbiter() {
         <div className="loader-half loader-left"></div>
         <div className="loader-half loader-right"></div>
         <div className="loader-console mono">
-          <p id="loader-title" data-text="ATLAS BRUT — FIELD RECORD">████ ████ — ████ ██████</p>
-          <p id="loader-coords">00.0000° N / 000.0000° W</p>
+          <p id="loader-title" data-text="ARBITER #36500">████ ████ — ████ ██████</p>
+          <p id="loader-coords">FIRST TECH CHALLENGE</p>
         </div>
       </div>
 
@@ -112,11 +112,11 @@ function Arbiter() {
       <header id="site-header">
         <a href="#" className="wordmark"><span className="gold">ARBITER</span> #36500</a>
         <nav className="mono">
-          <a href="#ch-01">Our Mission</a>
-          <a href="#route">Subteams</a>
-          <a href="#ledger">Ledger</a>
-          <a href="#dispatches">Dispatches</a>
-          <a href="#volume">Volume</a>
+          <a href="#ch-01">About</a>
+          <a href="#route">Design</a>
+          <a href="#ledger">Software</a>
+          <a href="#dispatches">Outreach</a>
+          <a href="#volume">Support Us</a>
         </nav>
         <div className="head-tools">
           <p id="field-clock" className="mono">—:— UTC</p>
@@ -132,16 +132,16 @@ function Arbiter() {
           <button id="menu-close" className="mono" aria-label="Close index">CLOSE ✕</button>
         </div>
         <nav className="menu-links">
-          <a href="#ch-01"><span className="mono m-no">01</span><span className="m-name">Monuments</span></a>
-          <a href="#route"><span className="mono m-no">02</span><span className="m-name">Route</span></a>
-          <a href="#ledger"><span className="mono m-no">03</span><span className="m-name">Ledger</span></a>
-          <a href="#dispatches"><span className="mono m-no">04</span><span className="m-name">Dispatches</span></a>
-          <a href="#volume"><span className="mono m-no">05</span><span className="m-name">The Volume</span></a>
-          <a href="#contact"><span className="mono m-no">06</span><span className="m-name">Expedition</span></a>
+          <a href="#ch-01"><span className="mono m-no">01</span><span className="m-name">About</span></a>
+          <a href="#route"><span className="mono m-no">02</span><span className="m-name">Design</span></a>
+          <a href="#ledger"><span className="mono m-no">03</span><span className="m-name">Software</span></a>
+          <a href="#dispatches"><span className="mono m-no">04</span><span className="m-name">Outreach</span></a>
+          <a href="#volume"><span className="mono m-no">05</span><span className="m-name">Support Us</span></a>
+          <a href="#contact"><span className="mono m-no">06</span><span className="m-name">Contact Us</span></a>
         </nav>
         <div className="menu-foot mono dim">
-          <span><span className="gold">ARBITER</span> #36500 — INDEX</span>
-          <span>52.4820°N / 13.3170°E</span>
+          <span><span className="gold">ARBITER</span> #36500</span>
+          <span>FIRST TECH CHALLENGE</span>
         </div>
       </div>
 
@@ -155,36 +155,226 @@ function Arbiter() {
             <span className="hero-line focus-line">#36500</span>
           </h1>
           <div className="hero-foot">
-            <p className="hero-desc">Not built to participate. Designed to innovate, compete, and leave a mark. Welcome to Arbiter, where robotics meets relentless ambition and a global legacy.</p>
+            <p className="hero-desc">Designed to innovate, compete, and tuned to perfection. Welcome to Arbiter, where robotics meets relentless ambition and a global legacy.</p>
             <p className="mono dim" data-decode="">LEARN ABOUT THE JOURNEY</p>
           </div>
         </section>
 
-        {/* ░░ PROLOGUE — short field note, masked line rise ░░ */}
-        <section className="prologue" data-tint="#0C0D0F">
-          <p className="mono dim sec-label" data-decode="">INTRODUCTION / OUR MISSION</p>
-          <p className="prologue-text">
-            <span className="line-mask"><span className="line">OUR MISSION IS <span className="gold">SIMPLE:</span></span></span>
-            <span className="line-mask"><span className="line">Provide and promote an inclusive community where we tackle new challenges as a collective team.</span></span>
-            <span className="line-mask"><span className="line">Embrace diverse perspectives and learn from one another to build technically strong robots and an even stronger community.</span></span>
-          </p>
-        </section>
+        {/* ░░ PROLOGUE / OUR MISSION — Cinematic Editorial Block ░░ */}
+        <section className="prologue split-prologue" id="ch-01" data-tint="#0C0D0F" style={{ padding: "10rem 0", position: "relative" }}>
+          <div style={{ 
+            display: "grid", 
+            gridTemplateColumns: "1fr 1.15fr", 
+            gap: "5rem", 
+            alignItems: "center", 
+            maxWidth: "100rem", 
+            margin: "0 auto",
+            padding: "0 4rem"
+          }}>
+            
+            {/* Left Column: Framed Specimen Plate */}
+            <div className="specimen-plate" style={{ 
+              position: "relative", 
+              border: "1px solid rgba(255,255,255,0.2)", 
+              background: "#08090A",
+              padding: "1rem"
+            }}>
+              <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/5", width: "100%" }}>
+                <img 
+                  src="/hw.JPG" 
+                  alt="Arbiter FTC Team Member" 
+                  style={{ 
+                    width: "100%", 
+                    height: "100%", 
+                    objectFit: "cover", 
+                    display: "block", 
+                    filter: "grayscale(100%) contrast(130%) brightness(90%)"
+                  }} 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+                <div style={{ position: "absolute", top: "12px", left: "12px", width: "16px", height: "16px", borderTop: "2px solid #D4AF37", borderLeft: "2px solid #D4AF37" }}></div>
+                <div style={{ position: "absolute", top: "12px", right: "12px", width: "16px", height: "16px", borderTop: "2px solid #D4AF37", borderRight: "2px solid #D4AF37" }}></div>
+                <div style={{ position: "absolute", bottom: "12px", left: "12px", width: "16px", height: "16px", borderBottom: "2px solid #D4AF37", borderLeft: "2px solid #D4AF37" }}></div>
+                <div style={{ position: "absolute", bottom: "12px", right: "12px", width: "16px", height: "16px", borderBottom: "2px solid #D4AF37", borderRight: "2px solid #D4AF37" }}></div>
+              </div>
+              <div className="mono" style={{ display: "flex", justifyContent: "space-between", marginTop: "1rem", fontSize: "0.7rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.15em" }}>
+                <span>OFF-SEASON // HARDWARE-PRACTICE</span>
+                <span>AUSTIN, TX — 30.2672° N</span>
+              </div>
+            </div>
 
+            {/* Right Column: High Cinematic Typography & Raw Editorial Layout */}
+            <div className="split-content" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              
+              <div className="split-text-block">
+                <p className="mono dim sec-label" data-decode="" style={{ marginBottom: "1.25rem", letterSpacing: "0.25em", fontSize: "0.75rem", color: "var(--gold, #D4AF37)" }}>
+                  ARBITER #36500 / ABOUT US
+                </p>
+                
+                <h2 className="sec-title" style={{ 
+                  fontSize: "clamp(3rem, 4.5vw, 4.8rem)", 
+                  lineHeight: "0.92", 
+                  fontWeight: "900", 
+                  textTransform: "uppercase", 
+                  marginBottom: "2rem",
+                  letterSpacing: "-0.02em",
+                  color: "#fff"
+                }}>
+                  A MISSION <span style={{ color: "var(--gold, #D4AF37)" }}>BEYOND </span><span style={{ color: "var(--gold, #D4AF37)" }}>THE MACHINE.</span>
+                </h2>
+
+                <div className="prologue-text" style={{ 
+                  fontSize: "1.05rem", 
+                  lineHeight: "1.75", 
+                  color: "rgba(255,255,255,0.8)", 
+                  maxWidth: "40rem", 
+                  fontWeight: "400",
+                  marginBottom: "2.5rem"
+                }}>
+                  Arbiter #36500 is a FIRST Tech Challenge Team based in Austin Texas preparing to compete in a global robotics challenge where we design, build, and program an 18" × 18" robot to play a new game through autonomous and driver-controlled operation.
+                  
+                  Our mission is to promote an inclusive community where we tackle new challenges as a collective team. By embracing diverse perspectives and learning from one another, we aim to build technically strong robots and an even stronger community.
+                </div>
+
+                {/* Animated "Support Us" Button */}
+                <div style={{ marginBottom: "3.5rem" }}>
+                  <a
+                    href="#support"
+                    className="mono support-btn"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                      padding: "0.9rem 2rem",
+                      fontSize: "0.75rem",
+                      fontWeight: "700",
+                      letterSpacing: "0.2em",
+                      textTransform: "uppercase",
+                      color: "#fff",
+                      backgroundColor: "transparent",
+                      border: "1px solid rgba(212, 175, 55, 0.4)",
+                      position: "relative",
+                      overflow: "hidden",
+                      textDecoration: "none",
+                      transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                      cursor: "pointer"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = "var(--gold, #D4AF37)";
+                      e.currentTarget.style.boxShadow = "0 0 25px rgba(212, 175, 55, 0.25)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = "rgba(212, 175, 55, 0.4)";
+                      e.currentTarget.style.boxShadow = "none";
+                      e.currentTarget.style.transform = "translateY(0)";
+                    }}
+                  >
+                    <span>SUPPORT US</span>
+                    <span style={{ color: "var(--gold, #D4AF37)", transition: "transform 0.3s ease" }}>→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* CINEMATIC RAW STATS: Clean baseline numbers matching the reference layout */}
+              <div className="telemetry-line mono" style={{ 
+                display: "grid", 
+                gridTemplateColumns: "repeat(3, auto)", 
+                gap: "3.5rem", 
+                borderTop: "1px solid rgba(255,255,255,0.15)", 
+                paddingTop: "2rem",
+                justifyContent: "start"
+              }}>
+                <div>
+                  <span className="gold odometer" style={{ fontSize: "3.2rem", fontWeight: "900", color: "#fff", display: "block", lineHeight: "1" }} data-value="300">30<span style={{ color: "var(--gold, #D4AF37)" }}>+</span></span>
+                  <span className="mono dim" style={{ fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginTop: "0.4rem", display: "block" }}>OUTREACH HOURS</span>
+                </div>
+                <div>
+                  <span className="gold odometer" style={{ fontSize: "3.2rem", fontWeight: "900", color: "#fff", display: "block", lineHeight: "1" }} data-value="20">20<span style={{ color: "var(--gold, #D4AF37)" }}>+</span></span>
+                  <span className="mono dim" style={{ fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginTop: "0.4rem", display: "block" }}>PEOPLE IMPACTED</span>
+                </div>
+                <div>
+                  <span className="gold odometer" style={{ fontSize: "3.2rem", fontWeight: "900", color: "#fff", display: "block", lineHeight: "1" }} data-value="3">3<span style={{ color: "var(--gold, #D4AF37)" }}>+</span></span>
+                  <span className="mono dim" style={{ fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginTop: "0.4rem", display: "block" }}>CONNECTIONS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         {/* ░░ CHAPTER 01 — dolly-zoom: framed slide grows to swallow the viewport ░░ */}
         <section className="chapter" id="ch-01" data-tint="#0D0F13">
           <div className="ch-stage">
             <div className="ch-mask">
-              <img className="ch-img" src="/hw.JPG" alt="Geisel Library — raking concrete piers" loading="lazy" decoding="async" />
+              <img className="ch-img" src="/bot.png" alt="Geisel Library — raking concrete piers" loading="lazy" decoding="async" />
               <div className="ch-scrim"></div>
             </div>
             <div className="ch-head mono">
-              <span className="ch-no">MONUMENT 01 / 07</span>
-              <span className="ch-coord" data-decode="">32.8810°N / 117.2376°W</span>
+              <span className="ch-no">DESIGN PHASE - 01</span>
+              <span className="ch-coord" data-decode="">INTO THE DEEP ROBOT PROTOTYPE</span>
             </div>
             <div className="ch-meta">
-              <h2 className="ch-title"><span className="line-mask"><span className="line">Design Team</span></span></h2>
-              <p className="ch-facts mono"><span className="line-mask"><span className="line">Arbiter #36500 — 2026 — Austin, TX</span></span></p>
-              <p className="ch-desc"><span className="line-mask"><span className="line">A lantern of concrete and glass held out over the canyon</span></span><span className="line-mask"><span className="line">on eight raking piers — a spaceship that chose to become a library.</span></span></p>
+              <h2 className="ch-title"><span className="line-mask"><span className="line">PRECISION DESIGN.</span></span></h2>
+              <p className="ch-facts mono"><span className="line-mask"><span className="line">ARBITER #36500 — 2026 — AUSTIN, TX</span></span></p>
+              <p className="ch-desc"><span className="line-mask"><span className="line">Before the first movement, there was the blueprint — </span></span><span className="line-mask"><span className="line">a system of ideas transformed into a machine ready for the challenge.</span></span></p>
+            </div>
+          </div>
+        </section>
+
+        {/* ░░ THE LEDGER — index rows + fixed dossier plate that swaps on hover ░░ */}
+        <section id="ledger" data-tint="#0E1011">
+          <div className="ledger-head">
+            <p className="mono dim sec-label" data-decode="">ARBITER #36500 / DESIGN</p>
+            <h2 className="sec-title">Seven specs,<br />built for the challenge.</h2>
+          </div>
+          <div className="ledger-grid">
+            <ul className="ledger-rows">
+              <li><button className="l-row" data-img="dt.png" data-coord="32.8810°N / 117.2376°W">
+                <span className="l-no mono">01</span>
+                <span className="l-name">Holonomic Drivetrain</span>
+                <span className="l-meta mono">INTO THE DEEP · 2026</span>
+              </button></li>
+              <li><button className="l-row" data-img="pckt.png" data-coord="45.5017°N / 73.5540°W">
+                <span className="l-no mono">02</span>
+                <span className="l-name">Pocketed Plates</span>
+                <span className="l-meta mono">INTO THE DEEP · 2026</span>
+              </button></li>
+              <li><button className="l-row" data-img="odom.png" data-coord="51.5202°N / 0.0937°W">
+                <span className="l-no mono">03</span>
+                <span className="l-name">Odometry & Pinpoint</span>
+                <span className="l-meta mono">INTO THE DEEP · 2026</span>
+              </button></li>
+              <li><button className="l-row" data-img="claw.png" data-coord="42.3603°N / 71.0580°W">
+                <span className="l-no mono">04</span>
+                <span className="l-name">Pivoting Claw</span>
+                <span className="l-meta mono">INTO THE DEEP · 2026</span>
+              </button></li>
+              <li><button className="l-row" data-img="ex.png" data-coord="43.2612°N / 5.3964°E">
+                <span className="l-no mono">05</span>
+                <span className="l-name">Extending Arms</span>
+                <span className="l-meta mono">INTO THE DEEP · 2026</span>
+              </button></li>
+              <li><button className="l-row" data-img="pv.png" data-coord="42.7358°N / 25.3937°E">
+                <span className="l-no mono">06</span>
+                <span className="l-name">Pivot Mechanism</span>
+                <span className="l-meta mono">INTO THE DEEP · 2026</span>
+              </button></li>
+              <li><button className="l-row" data-img="hng.png" data-coord="44.8125°N / 20.4612°E">
+                <span className="l-no mono">07</span>
+                <span className="l-name">Hanging Mechanism</span>
+                <span className="l-meta mono">INTO THE DEEP · 2026</span>
+              </button></li>
+            </ul>
+            {/* the dossier: a fixed specimen plate — image wipes in, coordinates decode */}
+            <div className="plate-wrap" aria-hidden="true">
+              <div className="plate">
+                <img className="plate-img plate-a" src="dt.png" alt="" />
+                <img className="plate-img plate-b" src="dt.png" alt="" />
+                <span className="plate-corner tl"></span><span className="plate-corner tr"></span>
+                <span className="plate-corner bl"></span><span className="plate-corner br"></span>
+              </div>
+              <p className="plate-read mono"><span id="plate-coord">32.8810°N / 117.2376°W</span></p>
             </div>
           </div>
         </section>
@@ -197,38 +387,19 @@ function Arbiter() {
               <div className="ch-scrim"></div>
             </div>
             <div className="ch-head mono">
-              <span className="ch-no">MONUMENT 02 / 07</span>
-              <span className="ch-coord" data-decode="">45.5017°N / 73.5540°W</span>
+              <span className="ch-no">PROGRAMMING - 02</span>
+              <span className="ch-coord" data-decode="">DECODE ROBOT PRACTICE CODE</span>
             </div>
             <div className="ch-meta">
-              <h2 className="ch-title"><span className="line-mask"><span className="line">Habitat 67</span></span></h2>
-              <p className="ch-facts mono"><span className="line-mask"><span className="line">MOSHE SAFDIE — 1967 — MONTREAL, CA</span></span></p>
-              <p className="ch-desc"><span className="line-mask"><span className="line">Three hundred and fifty-four boxes stacked against gravity,</span></span><span className="line-mask"><span className="line">each one lending its roof to a stranger's garden.</span></span></p>
-            </div>
-          </div>
-        </section>
-
-        {/* ░░ CHAPTER 03 ░░ */}
-        <section className="chapter" id="ch-03" data-tint="#14100C">
-          <div className="ch-stage">
-            <div className="ch-mask">
-              <img className="ch-img" src="/mg.JPG" alt="Buzludzha — abandoned concrete monument" loading="lazy" decoding="async" />
-              <div className="ch-scrim"></div>
-            </div>
-            <div className="ch-head mono">
-              <span className="ch-no">MONUMENT 03 / 07</span>
-              <span className="ch-coord" data-decode="">42.7358°N / 25.3937°E</span>
-            </div>
-            <div className="ch-meta">
-              <h2 className="ch-title"><span className="line-mask"><span className="line">Buzludzha</span></span></h2>
-              <p className="ch-facts mono"><span className="line-mask"><span className="line">GEORGI STOILOV — 1981 — KAZANLAK, BG</span></span></p>
-              <p className="ch-desc"><span className="line-mask"><span className="line">A saucer of concrete left to the frost at 1,432 metres —</span></span><span className="line-mask"><span className="line">the century's most confident ruin.</span></span></p>
+              <h2 className="ch-title"><span className="line-mask"><span className="line">CODEBASE</span></span></h2>
+              <p className="ch-facts mono"><span className="line-mask"><span className="line">ARBITER #36500 — 2026 — AUSTIN, TX</span></span></p>
+              <p className="ch-desc"><span className="line-mask"><span className="line">Every autonomous and teleOp begins as an idea. Countless hours of development</span></span><span className="line-mask"><span className="line"> and testing makes it something the team can trust in the final second.</span></span></p>
             </div>
           </div>
         </section>
 
         {/* ░░ THE ROUTE — pinned survey map; the expedition line draws itself and
-     waypoints ping on as the pen passes them. Covers all seven monuments. ░░ */}
+        waypoints ping on as the pen passes them. Covers all seven monuments. ░░ */}
         <section id="route" data-tint="#0D1013">
           <div className="route-stage">
             <div className="route-head">
@@ -277,84 +448,21 @@ function Arbiter() {
           </div>
         </section>
 
-        {/* ░░ THE LEDGER — index rows + fixed dossier plate that swaps on hover ░░ */}
-        <section id="ledger" data-tint="#0E1011">
-          <div className="ledger-head">
-            <p className="mono dim sec-label" data-decode="">THE LEDGER / ALL FILED MONUMENTS</p>
-            <h2 className="sec-title">Seven entries,<br />filed by latitude.</h2>
-          </div>
-          <div className="ledger-grid">
-            <ul className="ledger-rows">
-              <li><button className="l-row" data-img="https://images.unsplash.com/photo-1527576539890-dfa815648363?q=80&w=1200&auto=format&fit=crop" data-coord="32.8810°N / 117.2376°W">
-                <span className="l-no mono">00</span>
-                <span className="l-name">Geisel Library</span>
-                <span className="l-meta mono">LA JOLLA, US · 1970</span>
-              </button></li>
-              <li><button className="l-row" data-img="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=1200&auto=format&fit=crop" data-coord="45.5017°N / 73.5540°W">
-                <span className="l-no mono">01</span>
-                <span className="l-name">Habitat 67</span>
-                <span className="l-meta mono">MONTREAL, CA · 1967</span>
-              </button></li>
-              <li><button className="l-row" data-img="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1200&auto=format&fit=crop" data-coord="51.5202°N / 0.0937°W">
-                <span className="l-no mono">02</span>
-                <span className="l-name">Barbican Estate</span>
-                <span className="l-meta mono">LONDON, UK · 1976</span>
-              </button></li>
-              <li><button className="l-row" data-img="https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=1200&auto=format&fit=crop" data-coord="42.3603°N / 71.0580°W">
-                <span className="l-no mono">03</span>
-                <span className="l-name">Boston City Hall</span>
-                <span className="l-meta mono">BOSTON, US · 1968</span>
-              </button></li>
-              <li><button className="l-row" data-img="https://images.unsplash.com/photo-1431576901776-e539bd916ba2?q=80&w=1200&auto=format&fit=crop" data-coord="43.2612°N / 5.3964°E">
-                <span className="l-no mono">04</span>
-                <span className="l-name">Unité d'Habitation</span>
-                <span className="l-meta mono">MARSEILLE, FR · 1952</span>
-              </button></li>
-              <li><button className="l-row" data-img="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop" data-coord="42.7358°N / 25.3937°E">
-                <span className="l-no mono">05</span>
-                <span className="l-name">Buzludzha</span>
-                <span className="l-meta mono">KAZANLAK, BG · 1981</span>
-              </button></li>
-              <li><button className="l-row" data-img="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" data-coord="44.8125°N / 20.4612°E">
-                <span className="l-no mono">06</span>
-                <span className="l-name">Western City Gate</span>
-                <span className="l-meta mono">BELGRADE, RS · 1977</span>
-              </button></li>
-            </ul>
-            {/* the dossier: a fixed specimen plate — image wipes in, coordinates decode */}
-            <div className="plate-wrap" aria-hidden="true">
-              <div className="plate">
-                <img className="plate-img plate-a" src="https://images.unsplash.com/photo-1527576539890-dfa815648363?q=80&w=1200&auto=format&fit=crop" alt="" />
-                <img className="plate-img plate-b" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="" />
-                <span className="plate-corner tl"></span><span className="plate-corner tr"></span>
-                <span className="plate-corner bl"></span><span className="plate-corner br"></span>
-              </div>
-              <p className="plate-read mono"><span id="plate-coord">32.8810°N / 117.2376°W</span></p>
+        {/* ░░ CHAPTER 03 ░░ */}
+        <section className="chapter" id="ch-03" data-tint="#14100C">
+          <div className="ch-stage">
+            <div className="ch-mask">
+              <img className="ch-img" src="/mg1.JPG" alt="Buzludzha — abandoned concrete monument" loading="lazy" decoding="async" />
+              <div className="ch-scrim"></div>
             </div>
-          </div>
-        </section>
-
-        {/* ░░ FILM STRIP — auto-drifting contact sheet, warped by scroll velocity ░░ */}
-        <section id="strip" data-tint="#0C0D0F">
-          <p className="mono dim sec-label strip-label" data-decode="">CONTACT SHEET / UNFILED FRAMES</p>
-          <div className="strip-window">
-            <div className="strip-track">
-              <div className="strip-set">
-                <figure><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-014</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-022</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-031</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1439337153520-7082a56a81f4?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-047</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-058</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-063</figcaption></figure>
-              </div>
-              <div className="strip-set" aria-hidden="true">
-                <figure><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-014</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-022</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-031</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1439337153520-7082a56a81f4?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-047</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-058</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-063</figcaption></figure>
-              </div>
+            <div className="ch-head mono">
+              <span className="ch-no">COMMUNITY - 03</span>
+              <span className="ch-coord" data-decode="">ROBOCAMP</span>
+            </div>
+            <div className="ch-meta">
+              <h2 className="ch-title"><span className="line-mask"><span className="line">GROWING TOGETHER</span></span></h2>
+              <p className="ch-facts mono"><span className="line-mask"><span className="line">ARBITER #36500 & WESTWOOD HS — 2026 — AUSTIN, TX</span></span></p>
+              <p className="ch-desc"><span className="line-mask"><span className="line">Success means more when it's shared. Every connection, every mentor, and every </span></span><span className="line-mask"><span className="line">student we reach helps inspire the next generation and build a growing community.</span></span></p>
             </div>
           </div>
         </section>
@@ -396,6 +504,31 @@ function Arbiter() {
           </div>
         </section>
 
+        {/* ░░ FILM STRIP — auto-drifting contact sheet, warped by scroll velocity ░░ */}
+        <section id="strip" data-tint="#0C0D0F">
+          <p className="mono dim sec-label strip-label" data-decode="">CONTACT SHEET / UNFILED FRAMES</p>
+          <div className="strip-window">
+            <div className="strip-track">
+              <div className="strip-set">
+                <figure><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-014</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-022</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-031</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1439337153520-7082a56a81f4?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-047</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-058</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-063</figcaption></figure>
+              </div>
+              <div className="strip-set" aria-hidden="true">
+                <figure><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-014</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-022</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-031</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1439337153520-7082a56a81f4?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-047</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-058</figcaption></figure>
+                <figure><img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-063</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ░░ PRESS — rotating testimony; sources decode in ░░ */}
         <section id="press" data-tint="#0C0D0F">
           <p className="mono dim sec-label" data-decode="">PRESS / WHAT THE RECORD SAYS</p>
@@ -421,8 +554,8 @@ function Arbiter() {
         </section>
 
         {/* ░░ THE VOLUME — the conversion spine: a numbered printed edition.
-     Pinned product theatre: the cloth-bound book tilts home in 3D while
-     the specification sheet assembles and the copies-odometer rolls. ░░ */}
+        Pinned product theatre: the cloth-bound book tilts home in 3D while
+        the specification sheet assembles and the copies-odometer rolls. ░░ */}
         <section id="volume" data-tint="#12100D">
           <div className="vol-stage">
             <div className="vol-grid">
@@ -472,7 +605,7 @@ function Arbiter() {
 
         {/* ░░ EPILOGUE — field-note manifesto over a drifting outline wordmark ░░ */}
         <section className="epilogue" data-tint="#0C0D0F">
-          <span className="epi-bg" aria-hidden="true">BRUT</span>
+          <span className="epi-bg" aria-hidden="true">#36500</span>
           <p className="mono dim sec-label" data-decode="">EPILOGUE / FIELD NOTE 07</p>
           {/* split into words by JS: each sharpens from a blurred ghost as the
        scroll's focus wave passes it — the inscription is read by scrolling */}
@@ -483,21 +616,6 @@ function Arbiter() {
 
       {/* ░░ FOOTER — expedition desk ░░ */}
       <footer id="contact" data-tint="#0C0D0F">
-        {/* transmissions — lead capture */}
-        <div className="foot-dispatch">
-          <div>
-            <p className="mono dim sec-label" data-decode="">TRANSMISSIONS / ONE PER MONTH</p>
-            <p className="fd-lede">Field reports, plate previews, edition news. No noise.</p>
-          </div>
-          <form id="dispatch-form" noValidate>
-            <div className="df-row">
-              <input id="df-email" className="mono" type="email" required placeholder="OPERATOR@STATION.ORG" aria-label="Email address" autoComplete="email" />
-              <button className="mono" type="submit">TRANSMIT →</button>
-            </div>
-            <p id="df-note" className="mono dim" aria-live="polite"></p>
-          </form>
-        </div>
-
         <div className="foot-grid">
           <div className="foot-cta">
             <p className="mono dim sec-label" data-decode="">EXPEDITION II — DEPARTS 2027</p>
@@ -505,11 +623,6 @@ function Arbiter() {
               <span className="line-mask"><span className="line">Own the</span></span>
               <span className="line-mask"><span className="line">whole record.</span></span>
             </h2>
-            <a className="cta-btn magnetic" href="#volume">
-              <svg className="btn-stroke" aria-hidden="true"><rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" pathLength="100"></rect></svg>
-              <span>Pre-order the atlas</span>
-              <span className="accent mono">→</span>
-            </a>
           </div>
           <div className="foot-meta mono">
             <div>
@@ -523,14 +636,14 @@ function Arbiter() {
               <a href="#">Instagram</a>
               <a href="#">Are.na</a>
             </div>
+            <a className="cta-btn magnetic" href="#volume">
+              <svg className="btn-stroke" aria-hidden="true"><rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" pathLength="100"></rect></svg>
+              <span>Support Us!</span>
+              <span className="accent mono">→</span>
+            </a>
           </div>
         </div>
-        <div className="foot-mark" aria-hidden="true">ATLAS<span>✚</span>BRUT</div>
-        <div className="foot-bar mono">
-          <p><span className="gold">ATLAS</span> BRUT © 2026 · A FICTION</p>
-          <p>PLATES: UNSPLASH — PLACEHOLDERS</p>
-          <p>SURVEYED, PLATED, FILED</p>
-        </div>
+        <div className="foot-mark" aria-hidden="true">ARBITER FTC</div>
       </footer>
     </>
   );
