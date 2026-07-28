@@ -466,35 +466,35 @@ function Arbiter() {
         {/* ░░ DISPATCHES — sticky stacking field-note cards ░░ */}
         <section id="dispatches" data-tint="#101112">
           <div className="disp-head">
-            <p className="mono dim sec-label" data-decode="">DISPATCHES / NOTES FROM THE FIELD</p>
-            <h2 className="sec-title">Filed en route.</h2>
+            <p className="mono dim sec-label" data-decode="">ARBITER #36500 / COMMUNITY ENGAGEMENT</p>
+            <h2 className="sec-title">Inspiring The Next Generation.</h2>
           </div>
           <div className="stack">
             <article className="stack-card" style={{ ["--i" as any]: 0 } as CSSProperties}>
-              <div className="sc-media"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy" /></div>
+              <div className="sc-media"><img src="revHacks.png" alt="" loading="lazy" /></div>
               <div className="sc-body">
-                <p className="mono sc-date"><span className="accent">DISPATCH 03</span> — 02.11.2026 · FILED FROM 42.7358°N</p>
-                <h3>The saucer in the frost</h3>
-                <p className="sc-text">Eleven hundred metres of switchbacks, then the fog opened and it was simply there — a concrete disc balanced on the ridgeline, forty years abandoned and still the most certain object in the landscape. We exposed forty plates before our hands stopped working.</p>
-                <p className="mono sc-more">READ IN FULL — VOL. I, P. 402 <span className="accent">→</span></p>
+                <p className="mono sc-date"><span className="accent">HACKATHON</span> — Launching August · Co-Organized by Arbiter</p>
+                <h3>Reverie Hacks</h3>
+                <p className="sc-text">ReverieHacks 2026 is a two-week creative playground for developers, designers, and beginners alike to build meaningful projects. Choose from 6 specialized tracks—including ML Prompting, Embedded Systems, and App Dev—to collaborate with mentors, gain hands-on experience, and compete for awesome prizes.</p>
+                <p className="mono sc-more">Learn More <span className="accent">→</span></p>
               </div>
             </article>
             <article className="stack-card" style={{ ["--i" as any]: 1 } as CSSProperties}>
-              <div className="sc-media"><img src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy" /></div>
+              <div className="sc-media"><img src="robocamp.JPEG" alt="" loading="lazy" /></div>
               <div className="sc-body">
-                <p className="mono sc-date"><span className="accent">DISPATCH 02</span> — 14.09.2026 · FILED FROM 42.3603°N</p>
-                <h3>Boston, defended</h3>
-                <p className="sc-text">The most hated building in America is also the most photographed corner of our archive. Stand under the coffers at noon and the argument ends: this is a civic order poured in place, a city hall that refuses to flatter you into agreement.</p>
-                <p className="mono sc-more">READ IN FULL — VOL. I, P. 214 <span className="accent">→</span></p>
+                <p className="mono sc-date"><span className="accent">ROBOTICS CAMP</span> — June & July · Co-Organized by Arbiter</p>
+                <h3>RoboCamp</h3>
+                <p className="sc-text">RoboCamp 2026 is a hands-on STEM camp where elementary and middle schoolers get to build, code, and explore the world of robotics. Kids learn directly from high school mentors through interactive projects, with all proceeds going toward fundraising to keep the Westwood High School robotics teams running and competing.</p>
+                <p className="mono sc-more">Learn More <span className="accent">→</span></p>
               </div>
             </article>
             <article className="stack-card" style={{ ["--i" as any]: 2 } as CSSProperties}>
-              <div className="sc-media"><img src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy" /></div>
+              <div className="sc-media"><img src="ph.JPG" alt="" loading="lazy" /></div>
               <div className="sc-body">
-                <p className="mono sc-date"><span className="accent">DISPATCH 01</span> — 21.06.2026 · FILED FROM 45.5017°N</p>
-                <h3>The gardens of Habitat</h3>
-                <p className="sc-text">Fifty-nine years on, the boxes have grown vines. Residents wave from roofs that belong to their neighbours' living rooms. Utopia, it turns out, weathers exactly like concrete: slowly, honestly, and better than anyone predicted.</p>
-                <p className="mono sc-more">READ IN FULL — VOL. I, P. 118 <span className="accent">→</span></p>
+                <p className="mono sc-date"><span className="accent">UNDECIDED</span> — DATE TBD · STATUS TBD</p>
+                <h3>Coming Soon!</h3>
+                <p className="sc-text">The next big thing is taking shape, and we’re keeping the doors wide open. We're building a space for new ideas, fresh perspectives, and creative experiments—and we'd love to build it with you. Have an idea, want to partner up, or just want to pitch in? Reach out to us and let’s collaborate!</p>
+                <p className="mono sc-more">arbiter.ftc26@gmail.com <span className="accent">→</span></p>
               </div>
             </article>
           </div>
@@ -502,51 +502,19 @@ function Arbiter() {
 
         {/* ░░ FILM STRIP — auto-drifting contact sheet, warped by scroll velocity ░░ */}
         <section id="strip" data-tint="#0C0D0F">
-          <p className="mono dim sec-label strip-label" data-decode="">CONTACT SHEET / UNFILED FRAMES</p>
+          <p className="mono dim sec-label strip-label" data-decode="">ARBITER #36500 / PHOTO GALLERY</p>
           <div className="strip-window">
             <div className="strip-track">
               <div className="strip-set">
-                <figure><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-014</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-022</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-031</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1439337153520-7082a56a81f4?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-047</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-058</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-063</figcaption></figure>
-              </div>
-              <div className="strip-set" aria-hidden="true">
-                <figure><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-014</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-022</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-031</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1439337153520-7082a56a81f4?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-047</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-058</figcaption></figure>
-                <figure><img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=900&auto=format&fit=crop" alt="" loading="lazy" /><figcaption className="mono">FR-063</figcaption></figure>
+                <figure><img src="/gallery/1.JPG" alt="" loading="lazy" /><figcaption className="mono">SEMI-AREAS</figcaption></figure>
+                <figure><img src="/gallery/2.JPG" alt="" loading="lazy" /><figcaption className="mono">FINALIST-ALLIANCE-AWARD</figcaption></figure>
+                <figure><img src="/gallery/3.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
+                <figure><img src="/gallery/4.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
+                <figure><img src="/gallery/5.JPEG" alt="" loading="lazy" /><figcaption className="mono">ROBOCAMP</figcaption></figure>
+                <figure><img src="/gallery/6.JPG" alt="" loading="lazy" /><figcaption className="mono">BACK TO SCHOOL BASH</figcaption></figure>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* ░░ PRESS — rotating testimony; sources decode in ░░ */}
-        <section id="press" data-tint="#0C0D0F">
-          <p className="mono dim sec-label" data-decode="">PRESS / WHAT THE RECORD SAYS</p>
-          <div className="pq-stage">
-            <blockquote className="pq-item is-on">
-              <p className="pq-quote">“Brutalism, finally given the atlas it deserves.”</p>
-              <cite className="mono">— WALLPAPER*</cite>
-            </blockquote>
-            <blockquote className="pq-item">
-              <p className="pq-quote">“A field guide that reads like a thriller.”</p>
-              <cite className="mono">— DEZEEN</cite>
-            </blockquote>
-            <blockquote className="pq-item">
-              <p className="pq-quote">“The most confident book about concrete ever assembled.”</p>
-              <cite className="mono">— MONOCLE</cite>
-            </blockquote>
-            <blockquote className="pq-item">
-              <p className="pq-quote">“The photography alone justifies the edition.”</p>
-              <cite className="mono">— ARCHITECTURAL DIGEST</cite>
-            </blockquote>
-          </div>
-          <div className="pq-index mono dim"><span id="pq-now">01</span> / 04</div>
         </section>
 
         {/* ░░ THE VOLUME — the conversion spine: a numbered printed edition.
@@ -557,42 +525,37 @@ function Arbiter() {
             <div className="vol-grid">
               <div className="vol-book-wrap">
                 <div className="vol-book">
-                  <div className="b-spine mono"><span className="gold">ATLAS</span> BRUT — A FIELD GUIDE TO CONCRETE MONUMENTS — EDITION I</div>
+                  <div className="b-spine mono"><span className="gold">ARBITER</span> #36500 — AN OVERVIEW OF OUR ENGINEERING & IMPACT</div>
                   <div className="b-front">
                     <span className="b-frame" aria-hidden="true"></span>
-                    <span className="b-top mono">66.56°N → 42.73°N</span>
-                    <span className="b-title"><span className="gold">ATLAS</span><br />BRUT<span className="gold">✚</span></span>
-                    <span className="b-sub mono">A FIELD GUIDE TO<br />CONCRETE MONUMENTS</span>
+                    <span className="b-top mono">AUSTIN TEXAS</span>
+                    <span className="b-title"><span className="gold">ARBITER</span><br />#36500</span>
+                    <span className="b-sub mono">A COMPREHENSIVE OVERVIEW OF<br />OUR ENGINEERING & IMPACT</span>
                   </div>
                 </div>
                 <span className="vol-shadow" aria-hidden="true"></span>
               </div>
               <div className="vol-info">
-                <p className="mono dim sec-label" data-decode="">THE VOLUME / EDITION I OF 500</p>
+                <p className="mono dim sec-label" data-decode="">ARBITER #36500 / FINANCES & SUPPORT</p>
                 <h2 className="sec-title">
-                  <span className="line-mask"><span className="line vol-line">The whole record,</span></span>
-                  <span className="line-mask"><span className="line vol-line">bound in cloth.</span></span>
+                  <span className="line-mask"><span className="line vol-line">A new season</span></span>
+                  <span className="line-mask"><span className="line vol-line">backed by our community.</span></span>
                 </h2>
                 <ul className="vol-specs mono">
-                  <li className="vol-row"><span>PAGES</span><span>528</span></li>
-                  <li className="vol-row"><span>PLATES</span><span>214 TRITONE</span></li>
-                  <li className="vol-row"><span>FORMAT</span><span>240 × 320 MM</span></li>
-                  <li className="vol-row"><span>BINDING</span><span>CLOTH, FOIL-STAMPED</span></li>
-                  <li className="vol-row"><span>MAPS</span><span>3 FOLD-OUTS</span></li>
-                  <li className="vol-row"><span>EDITION</span><span>500, NUMBERED</span></li>
+                  <li className="vol-row"><span>SEASON BUDGET</span><span>$12,000</span></li>
+                  <li className="vol-row"><span>SPONSORSHIP TIERS</span><span>WHITE, GOLD, OLIVE & BLACK</span></li>
+                  <li className="vol-row"><span>PRIMARY EXPENSES</span><span>PARTS, REGISTRATION, TRAVEL</span></li>
+                  <li className="vol-row"><span>SPONSOR PERKS</span><span>LOGO ON ROBOT, MERCH, ETC.</span></li>
+                  <li className="vol-row"><span>TAX STATUS</span><span>501(c)(3) NON-PROFIT SPONSORED BY HCB</span></li>
+                  <li className="vol-row"><span>CORPORATE MATCH</span><span>ELIGIBLE</span></li>
                 </ul>
-                <div className="vol-count mono">
-                  <span className="dim">COPIES REMAINING</span>
-                  <span className="odo accent" data-value="217">217</span>
-                  <span className="dim">/ 500</span>
-                </div>
                 <div className="vol-buy">
                   <a className="cta-btn vol-cta magnetic" href="mailto:desk@atlasbrut.org?subject=Pre-order%20ATLAS%20BRUT%20—%20Edition%20I">
                     <svg className="btn-stroke" aria-hidden="true"><rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" pathLength="100"></rect></svg>
-                    <span>Pre-order — €120</span>
+                    <span>Sponsorship Packet</span>
                     <span className="accent mono">→</span>
                   </a>
-                  <p className="mono dim vol-ship">SHIPS SPRING 2027 · WORLDWIDE</p>
+                  <p className="mono dim vol-ship">AUSTIN TEXAS 2026</p>
                 </div>
               </div>
             </div>
@@ -602,12 +565,11 @@ function Arbiter() {
         {/* ░░ EPILOGUE — field-note manifesto over a drifting outline wordmark ░░ */}
         <section className="epilogue" data-tint="#0C0D0F">
           <span className="epi-bg" aria-hidden="true">#36500</span>
-          <p className="mono dim sec-label" data-decode="">EPILOGUE / FIELD NOTE 07</p>
+          <p className="mono dim sec-label" data-decode="">ARBITER #36500 / CONCLUSION</p>
           {/* split into words by JS: each sharpens from a blurred ghost as the
        scroll's focus wave passes it — the inscription is read by scrolling */}
-          <p className="epi-text" id="epi-text">Concrete does not apologise. It records — the weather, the century, the hand of the pour — <span className="accent">and waits to be read.</span></p>
+          <p className="epi-text" id="epi-text">A machine does not negotiate. It binds — the math, the metal, the intent of the builder — <span className="accent">into a consistent routine.</span></p>
         </section>
-
       </main>
 
       {/* ░░ FOOTER — expedition desk ░░ */}
