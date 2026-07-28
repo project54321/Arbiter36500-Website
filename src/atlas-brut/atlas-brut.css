@@ -1009,8 +1009,18 @@ menu overlay · sound toggle · transmissions form
     display: flex;
     flex-direction: column;
     padding: 0 var(--pad);
+
     visibility: hidden;
     opacity: 0;
+    pointer-events: none;
+
+    transition: opacity .35s ease, visibility .35s ease;
+}
+
+#menu-overlay.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .menu-top {

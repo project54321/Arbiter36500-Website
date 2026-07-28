@@ -112,10 +112,10 @@ function Arbiter() {
       <header id="site-header">
         <a href="#" className="wordmark"><span className="gold">ARBITER</span> #36500</a>
         <nav className="mono">
-          <a href="#ch-01">About</a>
-          <a href="#route">Design</a>
-          <a href="#ledger">Software</a>
-          <a href="#dispatches">Outreach</a>
+          <a href="#about">About</a>
+          <a href="#ch-01">Design</a>
+          <a href="#ch-02">Software</a>
+          <a href="#ch-03">Outreach</a>
           <a href="#volume">Support Us</a>
         </nav>
         <div className="head-tools">
@@ -132,10 +132,10 @@ function Arbiter() {
           <button id="menu-close" className="mono" aria-label="Close index">CLOSE ✕</button>
         </div>
         <nav className="menu-links">
-          <a href="#ch-01"><span className="mono m-no">01</span><span className="m-name">About</span></a>
-          <a href="#route"><span className="mono m-no">02</span><span className="m-name">Design</span></a>
-          <a href="#ledger"><span className="mono m-no">03</span><span className="m-name">Software</span></a>
-          <a href="#dispatches"><span className="mono m-no">04</span><span className="m-name">Outreach</span></a>
+          <a href="#about"><span className="mono m-no">01</span><span className="m-name">About</span></a>
+          <a href="#ch-01"><span className="mono m-no">02</span><span className="m-name">Design</span></a>
+          <a href="#ch-02"><span className="mono m-no">03</span><span className="m-name">Software</span></a>
+          <a href="#ch-03"><span className="mono m-no">04</span><span className="m-name">Outreach</span></a>
           <a href="#volume"><span className="mono m-no">05</span><span className="m-name">Support Us</span></a>
           <a href="#contact"><span className="mono m-no">06</span><span className="m-name">Contact Us</span></a>
         </nav>
@@ -161,7 +161,7 @@ function Arbiter() {
         </section>
 
         {/* ░░ PROLOGUE / OUR MISSION — Cinematic Editorial Block ░░ */}
-        <section className="prologue split-prologue" id="ch-01" data-tint="#0C0D0F" style={{ padding: "10rem 0", position: "relative" }}>
+        <section className="prologue split-prologue" id="about" data-tint="#0C0D0F" style={{ padding: "10rem 0", position: "relative" }}>
           <style>{`
             @media (max-width: 1024px) {
               .prologue.split-prologue {
@@ -587,7 +587,7 @@ function Arbiter() {
                     <span>Sponsorship Packet</span>
                     <span className="accent mono">→</span>
                   </a>
-                  <p className="mono dim vol-ship">AUSTIN TEXAS 2026</p>
+                  <p className="mono dim vol-ship">EMAIL US TO REQUEST A SPONSORSHIP PACKET (BUSINESS EMAIL)</p>
                 </div>
               </div>
             </div>

@@ -817,3 +817,35 @@ function startHeroIdle() {
   };
   gsap.delayedCall(1.2, flick);
 }
+
+//=======================CLOCK==========================
+
+const clock = document.getElementById("field-clock");
+
+function updateUTCClock() {
+  const now = new Date();
+
+  const hours = String(now.getUTCHours()).padStart(2, "0");
+  const minutes = String(now.getUTCMinutes()).padStart(2, "0");
+
+  clock.textContent = `${hours}:${minutes} UTC`;
+}
+
+// Initial render
+updateUTCClock();
+
+// Update every second
+setInterval(updateUTCClock, 1000);
+
+//===============MENU===============
+const menu = document.getElementById("menu-overlay");
+const menuBtn = document.getElementById("menu-btn");
+const closeBtn = document.getElementById("menu-close");
+
+menuBtn.addEventListener("click", () => {
+    menu.classList.add("open");
+});
+
+closeBtn.addEventListener("click", () => {
+    menu.classList.remove("open");
+});
