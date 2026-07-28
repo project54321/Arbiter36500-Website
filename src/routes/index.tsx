@@ -162,9 +162,31 @@ function Arbiter() {
 
         {/* ░░ PROLOGUE / OUR MISSION — Cinematic Editorial Block ░░ */}
         <section className="prologue split-prologue" id="ch-01" data-tint="#0C0D0F" style={{ padding: "10rem 0", position: "relative" }}>
-          <div style={{ 
+          <style>{`
+            @media (max-width: 1024px) {
+              .prologue.split-prologue {
+                padding: 5rem 0 !important;
+              }
+              .prologue-grid-container {
+                grid-template-columns: 1fr !important;
+                gap: 3rem !important;
+                padding: 0 1.5rem !important;
+              }
+              .specimen-plate {
+                margin: 0 auto;
+                width: 100% !important;
+                max-width: 380px;
+              }
+              .telemetry-line {
+                gap: 1.5rem 2.5rem !important;
+                flex-wrap: wrap !important;
+              }
+            }
+          `}</style>
+
+          <div className="prologue-grid-container" style={{ 
             display: "grid", 
-            gridTemplateColumns: "1fr 1.15fr", 
+            gridTemplateColumns: "minmax(0, 1fr) 1.15fr", 
             gap: "5rem", 
             alignItems: "center", 
             maxWidth: "100rem", 
@@ -177,18 +199,21 @@ function Arbiter() {
               position: "relative", 
               border: "1px solid rgba(255,255,255,0.2)", 
               background: "#08090A",
-              padding: "1rem"
+              padding: "1rem",
+              width: "fit-content",
+              maxWidth: "100%",
+              justifySelf: "center",
+              boxSizing: "border-box"
             }}>
               <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/5", width: "100%" }}>
                 <img 
-                  src="/hw.JPG" 
-                  alt="Arbiter FTC Team Member" 
+                  src="/logo.png" 
+                  alt="Arbiter FTC Team Logo" 
                   style={{ 
                     width: "100%", 
                     height: "100%", 
-                    objectFit: "cover", 
-                    display: "block", 
-                    filter: "grayscale(100%) contrast(130%) brightness(90%)"
+                    objectFit: "contain", 
+                    display: "block"
                   }} 
                   loading="lazy" 
                   decoding="async" 
@@ -198,8 +223,8 @@ function Arbiter() {
                 <div style={{ position: "absolute", bottom: "12px", left: "12px", width: "16px", height: "16px", borderBottom: "2px solid #D4AF37", borderLeft: "2px solid #D4AF37" }}></div>
                 <div style={{ position: "absolute", bottom: "12px", right: "12px", width: "16px", height: "16px", borderBottom: "2px solid #D4AF37", borderRight: "2px solid #D4AF37" }}></div>
               </div>
-              <div className="mono" style={{ display: "flex", justifyContent: "space-between", marginTop: "1rem", fontSize: "0.7rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.15em" }}>
-                <span>OFF-SEASON // HARDWARE-PRACTICE</span>
+              <div className="mono" style={{ display: "flex", justifyContent: "space-between", gap: "1rem", marginTop: "1rem", fontSize: "0.7rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.15em" }}>
+                <span>OFF-SEASON // ARBITER-LOGO</span>
                 <span>AUSTIN, TX — 30.2672° N</span>
               </div>
             </div>
@@ -213,7 +238,7 @@ function Arbiter() {
                 </p>
                 
                 <h2 className="sec-title" style={{ 
-                  fontSize: "clamp(3rem, 4.5vw, 4.8rem)", 
+                  fontSize: "clamp(2.5rem, 4.5vw, 4.8rem)", 
                   lineHeight: "0.92", 
                   fontWeight: "900", 
                   textTransform: "uppercase", 
@@ -233,14 +258,14 @@ function Arbiter() {
                   marginBottom: "2.5rem"
                 }}>
                   Arbiter #36500 is a FIRST Tech Challenge Team based in Austin Texas preparing to compete in a global robotics challenge where we design, build, and program an 18" × 18" robot to play a new game through autonomous and driver-controlled operation.
-                  
+                  <br /><br />
                   Our mission is to promote an inclusive community where we tackle new challenges as a collective team. By embracing diverse perspectives and learning from one another, we aim to build technically strong robots and an even stronger community.
                 </div>
 
                 {/* Animated "Support Us" Button */}
                 <div style={{ marginBottom: "3.5rem" }}>
                   <a
-                    href="#support"
+                    href="https://hcb.hackclub.com/donations/start/arbiterftc" target="_blank" rel="noopener noreferrer"
                     className="mono support-btn"
                     style={{
                       display: "inline-flex",
@@ -277,10 +302,10 @@ function Arbiter() {
                 </div>
               </div>
 
-              {/* CINEMATIC RAW STATS: Clean baseline numbers matching the reference layout */}
+              {/* CINEMATIC RAW STATS */}
               <div className="telemetry-line mono" style={{ 
-                display: "grid", 
-                gridTemplateColumns: "repeat(3, auto)", 
+                display: "flex", 
+                flexWrap: "wrap",
                 gap: "3.5rem", 
                 borderTop: "1px solid rgba(255,255,255,0.15)", 
                 paddingTop: "2rem",
@@ -511,7 +536,14 @@ function Arbiter() {
                 <figure><img src="/gallery/3.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/4.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/5.JPEG" alt="" loading="lazy" /><figcaption className="mono">ROBOCAMP</figcaption></figure>
-                <figure><img src="/gallery/6.JPG" alt="" loading="lazy" /><figcaption className="mono">BACK TO SCHOOL BASH</figcaption></figure>
+                <figure><img src="/gallery/6.jpg" alt="" loading="lazy" /><figcaption className="mono">BACK TO SCHOOL BASH</figcaption></figure>
+
+                <figure><img src="/gallery/1.JPG" alt="" loading="lazy" /><figcaption className="mono">SEMI-AREAS</figcaption></figure>
+                <figure><img src="/gallery/2.JPG" alt="" loading="lazy" /><figcaption className="mono">FINALIST-ALLIANCE-AWARD</figcaption></figure>
+                <figure><img src="/gallery/3.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
+                <figure><img src="/gallery/4.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
+                <figure><img src="/gallery/5.JPEG" alt="" loading="lazy" /><figcaption className="mono">ROBOCAMP</figcaption></figure>
+                <figure><img src="/gallery/6.jpg" alt="" loading="lazy" /><figcaption className="mono">BACK TO SCHOOL BASH</figcaption></figure>
               </div>
             </div>
           </div>
@@ -550,7 +582,7 @@ function Arbiter() {
                   <li className="vol-row"><span>CORPORATE MATCH</span><span>ELIGIBLE</span></li>
                 </ul>
                 <div className="vol-buy">
-                  <a className="cta-btn vol-cta magnetic" href="mailto:desk@atlasbrut.org?subject=Pre-order%20ATLAS%20BRUT%20—%20Edition%20I">
+                  <a className="cta-btn vol-cta magnetic" href="mailto:arbiter.ftc26@gmail.com">
                     <svg className="btn-stroke" aria-hidden="true"><rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" pathLength="100"></rect></svg>
                     <span>Sponsorship Packet</span>
                     <span className="accent mono">→</span>
@@ -576,25 +608,25 @@ function Arbiter() {
       <footer id="contact" data-tint="#0C0D0F">
         <div className="foot-grid">
           <div className="foot-cta">
-            <p className="mono dim sec-label" data-decode="">EXPEDITION II — DEPARTS 2027</p>
+            <p className="mono dim sec-label" data-decode="">FIRST TECH CHALLENGE - 2026</p>
             <h2 className="cta-title">
-              <span className="line-mask"><span className="line">Own the</span></span>
-              <span className="line-mask"><span className="line">whole record.</span></span>
+              <span className="line-mask"><span className="line">Aspire.</span></span>
+              <span className="line-mask"><span className="line">Ascend.</span></span>
+              <span className="line-mask"><span className="line">Achieve.</span></span>
             </h2>
           </div>
           <div className="foot-meta mono">
             <div>
-              <p className="foot-label">FIELD DESK</p>
-              <p>Rüdesheimer Str. 11<br />10713 Berlin, DE</p>
-              <p className="foot-coord dim">52.4820°N / 13.3170°E</p>
+              <p className="foot-label">CONTACT INFO</p>
+              <a href="mailto:arbiter.ftc26@gmail.com">arbiter.ftc26@gmail.com</a>
+              <p>12300 Riata Trace Pkwy,<br />Austin, TX 78727</p>
             </div>
             <div>
-              <p className="foot-label">CORRESPOND</p>
-              <a href="mailto:desk@atlasbrut.org">desk@atlasbrut.org</a>
-              <a href="#">Instagram</a>
-              <a href="#">Are.na</a>
+              <p className="foot-label">SOCIAL</p>
+              <a href="https://www.instagram.com/arbiterftc/" target="_blank" rel="noopener noreferrer">Instagram: @arbiterftc</a>
+              <a href="https://www.youtube.com/@arbiter-ftc" target="_blank" rel="noopener noreferrer">Youtube: @arbiter-ftc</a>
             </div>
-            <a className="cta-btn magnetic" href="#volume">
+            <a className="cta-btn magnetic" href="https://hcb.hackclub.com/donations/start/arbiterftc" target="_blank" rel="noopener noreferrer">
               <svg className="btn-stroke" aria-hidden="true"><rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" pathLength="100"></rect></svg>
               <span>Support Us!</span>
               <span className="accent mono">→</span>

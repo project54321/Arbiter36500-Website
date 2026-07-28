@@ -119,10 +119,28 @@ const railRead = document.getElementById('rail-read');
 const railH = () => document.querySelector('.rail-line').offsetHeight;
 
 /* contact sheet: two identical sets, so xPercent −50 loops seamlessly */
-let stripTl = null, stripSkew = null;
+let stripTl = null, stripSkew = null, stripTimeScale = null;
 if (!reduceMotion) {
-  stripTl = gsap.to('.strip-track', { xPercent: -50, repeat: -1, duration: CONFIG.stripDuration, ease: 'none' });
+  // force3D: true and use a dedicated timeline for the loop
+  stripTl = gsap.to('.strip-track', { 
+    xPercent: -50, 
+    repeat: -1, 
+    duration: CONFIG.stripDuration, 
+    ease: 'none',
+    force3D: true 
+  });
+  
+  // Use quickTo for both skew and timeScale to eliminate jitter from high-frequency scroll events
   stripSkew = gsap.quickTo('.strip-track', 'skewX', { duration: 0.6, ease: 'power3.out' });
+  
+  // We'll proxy the timeScale through a dummy object to use quickTo-like smoothing
+  const tsProxy = { val: 1 };
+  const tsTo = gsap.quickTo(tsProxy, 'val', { 
+    duration: 0.4, 
+    ease: 'power2.out', 
+    onUpdate: () => stripTl.timeScale(tsProxy.val) 
+  });
+  stripTimeScale = tsTo;
 }
 const clampSkew = gsap.utils.clamp(-CONFIG.stripSkewMax, CONFIG.stripSkewMax);
 
@@ -141,9 +159,16 @@ lenis.on('scroll', (e) => {
   if (reduceMotion) return;
   // contact sheet warps with scroll: direction flips it, velocity skews it
   if (stripTl) {
-    const boost = 1 + Math.min(Math.abs(e.velocity || 0) * 0.08, 5);
-    stripTl.timeScale((e.direction || 1) * boost);
-    stripSkew(clampSkew((e.velocity || 0) * 0.35));
+    const vel = e.velocity || 0;
+    const dir = e.direction || 1;
+    
+    // Only update direction if there's meaningful movement to prevent jitter at rest
+    const targetDir = Math.abs(vel) > 0.1 ? dir : (stripTl.timeScale() > 0 ? 1 : -1);
+    const boost = 1 + Math.min(Math.abs(vel) * 0.08, 5);
+    
+    // Smoothly transition the timeScale and Skew
+    stripTimeScale(targetDir * boost);
+    stripSkew(clampSkew(vel * 0.35));
   }
 });
 
@@ -316,13 +341,22 @@ document.querySelectorAll('.chapter').forEach((chapter) => {
 
   // rows stagger in on first approach
   if (!reduceMotion) {
-    // Trigger ledger rows earlier and make the entrance snappier so
-    // they appear reliably during fast scrolling.
-    gsap.from('.l-row', {
-      y: 20, autoAlpha: 0, duration: 0.5, stagger: 0.04, ease: CONFIG.ease,
-      clearProps: 'opacity,visibility,transform',
-      // start when the ledger top reaches 70% down the viewport (earlier)
-      scrollTrigger: { trigger: '.ledger-rows', start: 'top 70%' }
+    // FIX: Use ScrollTrigger.batch to handle many rows efficiently.
+    // Instead of animating all rows at once when the container enters,
+    // we animate them in batches as they enter the viewport.
+    // This fixes the "taking too long to show" issue for long lists.
+    ScrollTrigger.batch('.l-row', {
+      start: 'top 95%', // Trigger as each row enters the bottom of the viewport
+      onEnter: (batch) => gsap.to(batch, {
+        y: 0, 
+        autoAlpha: 1, 
+        duration: 0.5, 
+        stagger: 0.06, 
+        ease: CONFIG.ease,
+        overwrite: true
+      }),
+      // Ensure initial state is set
+      onRefresh: (batch) => gsap.set(batch, { y: 20, autoAlpha: 0 })
     });
   }
 }
@@ -398,121 +432,7 @@ if (finePointer && !reduceMotion) {
     xTo(e.clientX); yTo(e.clientY);
     const lat = (0.5 - e.clientY / window.innerHeight) * 180;
     const lon = (e.clientX / window.innerWidth - 0.5) * 360;
-    read.textContent =
-      Math.abs(lat).toFixed(2) + '°' + (lat >= 0 ? 'N' : 'S') + ' / ' +
-      Math.abs(lon).toFixed(2) + '°' + (lon >= 0 ? 'E' : 'W');
-  });
-  // crosshair flares over anything interactive
-  document.querySelectorAll('a, button, .l-row').forEach((el) => {
-    el.addEventListener('mouseenter', () => gsap.to(cur, { scale: 1.7, duration: 0.3, ease: CONFIG.ease }));
-    el.addEventListener('mouseleave', () => gsap.to(cur, { scale: 1, duration: 0.3, ease: CONFIG.ease }));
-  });
-}
-
-/* ═══ FIELD CLOCK — live UTC in the header ═══ */
-{
-  const clock = document.getElementById('field-clock');
-  const tick = () => {
-    const d = new Date();
-    clock.textContent =
-      String(d.getUTCHours()).padStart(2, '0') + ':' +
-      String(d.getUTCMinutes()).padStart(2, '0') + ' UTC';
-  };
-  tick(); setInterval(tick, 30000);
-}
-
-/* Recompute pins once every plate has loaded */
-window.addEventListener('load', () => ScrollTrigger.refresh());
-
-/* Lazy images arrive as you scroll — if one changes layout at all,
-   every trigger below it goes stale. Heal positions with a debounced
-   refresh whenever a straggler lands. */
-{
-  let healT = null;
-  const heal = () => { clearTimeout(healT); healT = setTimeout(() => ScrollTrigger.refresh(), 200); };
-  document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
-    if (!img.complete) img.addEventListener('load', heal, { once: true });
-  });
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   V2 — MENU OVERLAY (the index)
-   Full-screen on every size; staggered link rise on open, scroll
-   locked via Lenis while it holds the screen.
-   ═══════════════════════════════════════════════════════════════ */
-{
-  const overlay = document.getElementById('menu-overlay');
-  const openBtn = document.getElementById('menu-btn');
-  const closeBtn = document.getElementById('menu-close');
-  const links = overlay.querySelectorAll('.menu-links a');
-  let isOpen = false;
-
-  const open = () => {
-    if (isOpen) return; isOpen = true;
-    openBtn.setAttribute('aria-expanded', 'true');
-    overlay.setAttribute('aria-hidden', 'false');
-    lenis.stop();
-    if (reduceMotion) { gsap.set(overlay, { autoAlpha: 1 }); return; }
-    gsap.timeline({ defaults: { ease: CONFIG.ease } })
-      .to(overlay, { autoAlpha: 1, duration: 0.45 })
-      .fromTo(links, { y: 70, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.8, stagger: 0.06 }, '-=0.15')
-      .fromTo('.menu-foot', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5 }, '-=0.5');
-    overlay.querySelectorAll('.m-no').forEach((el, i) => decode(el, { duration: 0.5, delay: 0.2 + i * 0.06 }));
-  };
-  const close = () => {
-    if (!isOpen) return; isOpen = false;
-    openBtn.setAttribute('aria-expanded', 'false');
-    overlay.setAttribute('aria-hidden', 'true');
-    lenis.start();
-    gsap.to(overlay, { autoAlpha: 0, duration: reduceMotion ? 0 : 0.35, ease: 'power2.in' });
-  };
-
-  openBtn.addEventListener('click', open);
-  closeBtn.addEventListener('click', close);
-  links.forEach((a) => a.addEventListener('click', close));
-  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   V2 — AMBIENT SOUND (opt-in)
-   A field-recording hum synthesized in WebAudio: looped brown
-   noise through a low-pass filter, faded in/out on toggle. Built
-   lazily on the first click, so no AudioContext before a gesture.
-   ═══════════════════════════════════════════════════════════════ */
-{
-  const btn = document.getElementById('sound-btn');
-  let audio = null, on = false;
-
-  const build = () => {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const len = ctx.sampleRate * 2;
-    const buf = ctx.createBuffer(1, len, ctx.sampleRate);
-    const data = buf.getChannelData(0);
-    let last = 0;
-    for (let i = 0; i < len; i++) {           // brown noise — a deep, even rumble
-      const white = Math.random() * 2 - 1;
-      last = (last + 0.02 * white) / 1.02;
-      data[i] = last * 3.5;
-    }
-    const src = ctx.createBufferSource();
-    src.buffer = buf; src.loop = true;
-    const filter = ctx.createBiquadFilter();
-    filter.type = 'lowpass'; filter.frequency.value = 160;
-    const gain = ctx.createGain(); gain.gain.value = 0;
-    src.connect(filter); filter.connect(gain); gain.connect(ctx.destination);
-    src.start();
-    return { ctx, gain };
-  };
-
-  btn?.addEventListener('click', () => {
-    if (!audio) audio = build();
-    audio.ctx.resume();
-    on = !on;
-    const t = audio.ctx.currentTime;
-    audio.gain.gain.cancelScheduledValues(t);
-    audio.gain.gain.linearRampToValueAtTime(on ? 0.05 : 0, t + 1.2);
-    btn.textContent = on ? 'SND · ON' : 'SND · OFF';
-    btn.setAttribute('aria-pressed', String(on));
+    read.textContent = `${Math.abs(lat).toFixed(2)}°${lat > 0 ? 'N' : 'S'} / ${Math.abs(lon).toFixed(2)}°${lon > 0 ? 'E' : 'W'}`;
   });
 }
 
@@ -897,4 +817,3 @@ function startHeroIdle() {
   };
   gsap.delayedCall(1.2, flick);
 }
-
