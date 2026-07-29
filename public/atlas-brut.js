@@ -11,8 +11,8 @@ const CONFIG = {
   dollyLength: '+=220%',   // how much scroll each chapter pin consumes
   stripDuration: 46,       // seconds per contact-sheet loop at idle
   stripSkewMax: 6,         // max skewX (deg) at peak scroll velocity
-  latStart: 66.56,         // meridian rail readout: top of page …
-  latEnd: 42.7358          //   … bottom of page (Buzludzha's latitude)
+  latStart: 0,         // meridian rail readout: top of page …
+  latEnd: 36500          //   … bottom of page (Buzludzha's latitude)
 };
 
 gsap.registerPlugin(ScrollTrigger);
@@ -153,7 +153,7 @@ lenis.on('scroll', (e) => {
     railFill.style.transform = `scaleY(${p})`;
     railDot.style.transform = `translateY(${p * railH()}px)`;
     const lat = CONFIG.latStart + (CONFIG.latEnd - CONFIG.latStart) * p;
-    railRead.textContent = lat.toFixed(4) + '°N';
+    railRead.textContent = Math.round(lat);
   }
 
   if (reduceMotion) return;

@@ -99,13 +99,13 @@ function Arbiter() {
 
       {/* ░░ MERIDIAN RAIL — latitude instrument, replaces the usual progress bar ░░ */}
       <aside id="rail" aria-hidden="true">
-        <span className="rail-cap mono">N</span>
+        <span className="rail-cap mono">B</span>
         <div className="rail-line">
           <div className="rail-fill"></div>
           <div className="rail-dot"></div>
         </div>
-        <span className="rail-cap mono">S</span>
-        <span id="rail-read" className="mono">66.5600°N</span>
+        <span className="rail-cap mono">E</span>
+        <span id="rail-read" className="mono">0</span>
       </aside>
 
       {/* ░░ HEADER ░░ */}
@@ -507,7 +507,7 @@ function Arbiter() {
             <article className="stack-card" style={{ ["--i" as any]: 1 } as CSSProperties}>
               <div className="sc-media"><img src="robocamp.JPEG" alt="" loading="lazy" /></div>
               <div className="sc-body">
-                <p className="mono sc-date"><span className="accent">ROBOTICS CAMP</span> — June & July · Supported by Arbiter Members</p>
+                <p className="mono sc-date"><span className="accent">ROBOTICS CAMP</span> — June & July · Supported by Arbiter Volunteers/Org. Committee</p>
                 <h3>RoboCamp</h3>
                 <p className="sc-text">RoboCamp 2026 is a hands-on STEM camp where elementary and middle schoolers get to build, code, and explore the world of robotics. Kids learn directly from high school mentors through interactive projects, with all proceeds going toward fundraising to keep the Westwood High School robotics teams running and competing.</p>
                 <p className="mono sc-more">Learn More <span className="accent">→</span></p>
@@ -532,14 +532,14 @@ function Arbiter() {
             <div className="strip-track">
               <div className="strip-set">
                 <figure><img src="/gallery/1.JPG" alt="" loading="lazy" /><figcaption className="mono">SEMI-AREAS</figcaption></figure>
-                <figure><img src="/gallery/2.JPG" alt="" loading="lazy" /><figcaption className="mono">FINALIST-ALLIANCE-AWARD</figcaption></figure>
+                <figure><img src="/gallery/botfs.png" alt="" loading="lazy" /><figcaption className="mono">FINALIST-ALLIANCE-AWARD</figcaption></figure>
                 <figure><img src="/gallery/3.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/4.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/5.JPEG" alt="" loading="lazy" /><figcaption className="mono">ROBOCAMP</figcaption></figure>
                 <figure><img src="/gallery/6.jpg" alt="" loading="lazy" /><figcaption className="mono">BACK TO SCHOOL BASH</figcaption></figure>
 
                 <figure><img src="/gallery/1.JPG" alt="" loading="lazy" /><figcaption className="mono">SEMI-AREAS</figcaption></figure>
-                <figure><img src="/gallery/2.JPG" alt="" loading="lazy" /><figcaption className="mono">FINALIST-ALLIANCE-AWARD</figcaption></figure>
+                <figure><img src="/gallery/botfs.png" alt="" loading="lazy" /><figcaption className="mono">FINALIST-ALLIANCE-AWARD</figcaption></figure>
                 <figure><img src="/gallery/3.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/4.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/5.JPEG" alt="" loading="lazy" /><figcaption className="mono">ROBOCAMP</figcaption></figure>
