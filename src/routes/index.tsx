@@ -498,7 +498,7 @@ function Arbiter() {
             <article className="stack-card" style={{ ["--i" as any]: 0 } as CSSProperties}>
               <div className="sc-media"><img src="revHacks.png" alt="" loading="lazy" /></div>
               <div className="sc-body">
-                <p className="mono sc-date"><span className="accent">HACKATHON</span> — Launching August · Co-Organized by Arbiter</p>
+                <p className="mono sc-date"><span className="accent">HACKATHON</span> — Launching August · Supported by Arbiter Members</p>
                 <h3>Reverie Hacks</h3>
                 <p className="sc-text">ReverieHacks 2026 is a two-week creative playground for developers, designers, and beginners alike to build meaningful projects. Choose from 6 specialized tracks—including ML Prompting, Embedded Systems, and App Dev—to collaborate with mentors, gain hands-on experience, and compete for awesome prizes.</p>
                 <p className="mono sc-more">Learn More <span className="accent">→</span></p>
@@ -507,7 +507,7 @@ function Arbiter() {
             <article className="stack-card" style={{ ["--i" as any]: 1 } as CSSProperties}>
               <div className="sc-media"><img src="robocamp.JPEG" alt="" loading="lazy" /></div>
               <div className="sc-body">
-                <p className="mono sc-date"><span className="accent">ROBOTICS CAMP</span> — June & July · Co-Organized by Arbiter</p>
+                <p className="mono sc-date"><span className="accent">ROBOTICS CAMP</span> — June & July · Supported by Arbiter Members</p>
                 <h3>RoboCamp</h3>
                 <p className="sc-text">RoboCamp 2026 is a hands-on STEM camp where elementary and middle schoolers get to build, code, and explore the world of robotics. Kids learn directly from high school mentors through interactive projects, with all proceeds going toward fundraising to keep the Westwood High School robotics teams running and competing.</p>
                 <p className="mono sc-more">Learn More <span className="accent">→</span></p>
