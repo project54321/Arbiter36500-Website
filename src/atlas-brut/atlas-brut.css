@@ -696,8 +696,8 @@ pure transforms: GPU only, no layout, no clip-path repaints.     */
 .epi-bg {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 25vw;
+    transform: translateY(-50%);
     font-weight: 900;
     font-size: 42vw;
     line-height: 1;
