@@ -623,7 +623,7 @@ function Arbiter() {
             </div>
             <div>
               <p className="foot-label">SOCIAL</p>
-              <a href="https://www.instagram.com/arbiterftc/" target="_blank" rel="noopener noreferrer">Instagram: @arbiterftc</a>
+              <a href="https://www.instagram.com/arbiter_ftc/" target="_blank" rel="noopener noreferrer">Instagram: @arbiter_ftc</a>
               <a href="https://www.youtube.com/@arbiter-ftc" target="_blank" rel="noopener noreferrer">Youtube: @arbiter-ftc</a>
             </div>
             <a className="cta-btn magnetic" href="https://hcb.hackclub.com/donations/start/arbiterftc" target="_blank" rel="noopener noreferrer">
