@@ -531,15 +531,15 @@ function Arbiter() {
           <div className="strip-window">
             <div className="strip-track">
               <div className="strip-set">
-                <figure><img src="/gallery/1.JPG" alt="" loading="lazy" /><figcaption className="mono">SEMI-AREAS</figcaption></figure>
-                <figure><img src="/gallery/botfs.png" alt="" loading="lazy" /><figcaption className="mono">FINALIST-ALLIANCE-AWARD</figcaption></figure>
+                <figure><img src="/gallery/gyattdamncheggs.png" alt="" loading="lazy" /><figcaption className="mono">ROBOCAMP</figcaption></figure>
+                <figure><img src="/gallery/botfs.png" alt="" loading="lazy" /><figcaption className="mono">INTO THE DEEP CAD</figcaption></figure>
                 <figure><img src="/gallery/3.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/4.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/5.JPEG" alt="" loading="lazy" /><figcaption className="mono">ROBOCAMP</figcaption></figure>
                 <figure><img src="/gallery/6.jpg" alt="" loading="lazy" /><figcaption className="mono">BACK TO SCHOOL BASH</figcaption></figure>
 
-                <figure><img src="/gallery/1.JPG" alt="" loading="lazy" /><figcaption className="mono">SEMI-AREAS</figcaption></figure>
-                <figure><img src="/gallery/botfs.png" alt="" loading="lazy" /><figcaption className="mono">FINALIST-ALLIANCE-AWARD</figcaption></figure>
+                <figure><img src="/gallery/gyattdamncheggs.png" alt="" loading="lazy" /><figcaption className="mono">ROBOCAMP</figcaption></figure>
+                <figure><img src="/gallery/botfs.png" alt="" loading="lazy" /><figcaption className="mono">INTO THE DEEP CAD</figcaption></figure>
                 <figure><img src="/gallery/3.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/4.JPG" alt="" loading="lazy" /><figcaption className="mono">ROBANQUET</figcaption></figure>
                 <figure><img src="/gallery/5.JPEG" alt="" loading="lazy" /><figcaption className="mono">ROBOCAMP</figcaption></figure>
