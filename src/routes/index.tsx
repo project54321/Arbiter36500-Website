@@ -120,7 +120,7 @@ function Arbiter() {
         </nav>
         <div className="head-tools">
           <p id="field-clock" className="mono">—:— UTC</p>
-          <a href="#volume" className="pill mono">Contact Us</a>
+          <a href="#contact" className="pill mono">Contact Us</a>
           <button id="menu-btn" aria-label="Open index" aria-expanded="false" aria-controls="menu-overlay"><span></span><span></span></button>
         </div>
       </header>
